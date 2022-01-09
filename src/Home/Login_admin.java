@@ -284,8 +284,9 @@ public class Login_admin extends javax.swing.JFrame {
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // TODO add your handling code here:
 
-       // if (selectedOpt.equals("DOCTOR'S")) {
-            new DOCTOR().setVisible(true);
+       // if (selectedOpt.equals("DOCTOR")) {
+            new registration().setVisible(true);
+            dispose();
        // }
 
 
