@@ -224,7 +224,7 @@ public class homePanel extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration
+    // Variables declaration - do not modify
     private javax.swing.JButton BtnLogout;
     private javax.swing.JButton BtnScheduleAppointment;
     private javax.swing.JButton btnDoctorDetails;
@@ -238,5 +238,5 @@ public class homePanel extends javax.swing.JFrame {
     private java.awt.MenuBar menuBar1;
     private javax.swing.JPanel panelFirst;
     private javax.swing.JPanel panelSecond;
-    // End of variables declaration
+    // End of declare
 }
