@@ -203,6 +203,8 @@ public class homePanel extends javax.swing.JFrame {
     //butoon logout action performer
     private void BtnLogoutActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new Login_admin().setVisible(true);
+        dispose();
     }
 
     /**
