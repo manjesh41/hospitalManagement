@@ -26,7 +26,6 @@ public class homePanel extends javax.swing.JFrame {
         panelSecond = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BtnLogout = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         btnSpecialist = new javax.swing.JButton();
         btnDoctorDetails = new javax.swing.JButton();
         BtnScheduleAppointment = new javax.swing.JButton();
@@ -52,8 +51,6 @@ public class homePanel extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setText("ABC Hospital");
 
-
-        //logoutbutten
         BtnLogout.setBackground(new java.awt.Color(204, 0, 0));
         BtnLogout.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
         BtnLogout.setText("LOG-Out");
@@ -68,7 +65,7 @@ public class homePanel extends javax.swing.JFrame {
         panelSecondLayout.setHorizontalGroup(
                 panelSecondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(panelSecondLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap(314, Short.MAX_VALUE)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(228, 228, 228)
                                 .addComponent(BtnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -84,21 +81,21 @@ public class homePanel extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hospital-256.png"))); // NOI18N
-
-
-        //button specialist
         btnSpecialist.setBackground(new java.awt.Color(255, 102, 102));
         btnSpecialist.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         btnSpecialist.setText("Specialist");
         btnSpecialist.setAutoscrolls(true);
         btnSpecialist.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(51, 0, 51), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
         btnSpecialist.addActionListener(new java.awt.event.ActionListener() {
+
+            //button specialist action performer
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSpecialistActionPerformed(evt);
+                //
+
             }
         });
-   //doctor details button
+
         btnDoctorDetails.setBackground(new java.awt.Color(153, 255, 153));
         btnDoctorDetails.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnDoctorDetails.setText("Doctor Details");
@@ -106,10 +103,9 @@ public class homePanel extends javax.swing.JFrame {
         btnDoctorDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDoctorDetailsActionPerformed(evt);
+                // TODO add your handling code here:
             }
         });
-
-        //schedule appointment button
 
         BtnScheduleAppointment.setBackground(new java.awt.Color(102, 102, 255));
         BtnScheduleAppointment.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -119,31 +115,24 @@ public class homePanel extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Find your doctor here!!");
 
-
-        //first panel
-
         javax.swing.GroupLayout panelFirstLayout = new javax.swing.GroupLayout(panelFirst);
         panelFirst.setLayout(panelFirstLayout);
         panelFirstLayout.setHorizontalGroup(
                 panelFirstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(panelSecond, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFirstLayout.createSequentialGroup()
-                                .addContainerGap(99, Short.MAX_VALUE)
-                                .addComponent(btnSpecialist, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnDoctorDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48))
                         .addGroup(panelFirstLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(622, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFirstLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(panelFirstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(BtnScheduleAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(panelFirstLayout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(panelFirstLayout.createSequentialGroup()
-                                                .addGap(91, 91, 91)
-                                                .addComponent(BtnScheduleAppointment)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(btnSpecialist, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(112, 112, 112)
+                                                .addComponent(btnDoctorDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(151, 151, 151))
         );
         panelFirstLayout.setVerticalGroup(
                 panelFirstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,19 +142,13 @@ public class homePanel extends javax.swing.JFrame {
                                                 .addGap(106, 106, 106)
                                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(73, 73, 73)
-                                                .addComponent(btnSpecialist, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(panelFirstLayout.createSequentialGroup()
-                                                .addComponent(panelSecond, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(panelFirstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(panelFirstLayout.createSequentialGroup()
-                                                                .addGap(65, 65, 65)
-                                                                .addComponent(jLabel2))
-                                                        .addGroup(panelFirstLayout.createSequentialGroup()
-                                                                .addGap(122, 122, 122)
-                                                                .addComponent(btnDoctorDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                                .addComponent(BtnScheduleAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(72, 72, 72))
+                                                .addGroup(panelFirstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(btnSpecialist, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(btnDoctorDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(panelSecond, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                .addComponent(BtnScheduleAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(119, 119, 119))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,7 +162,7 @@ public class homePanel extends javax.swing.JFrame {
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 11, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(panelFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -187,24 +170,24 @@ public class homePanel extends javax.swing.JFrame {
     }// </editor-fold>
 
 
-    //button specaialist action performer
+
+    //button specialist Action performer
+
     private void btnSpecialistActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
-
-
-
-    //button docotrdeatils action performer
+//Doctor details button action performer
     private void btnDoctorDetailsActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
 
-    //butoon logout action performer
+    //Logout button acttion performer
     private void BtnLogoutActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         new Login_admin().setVisible(true);
         dispose();
+
     }
 
     /**
@@ -248,7 +231,6 @@ public class homePanel extends javax.swing.JFrame {
     private javax.swing.JButton btnDoctorDetails;
     private javax.swing.JButton btnSpecialist;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private java.awt.Menu menu2;
@@ -256,5 +238,5 @@ public class homePanel extends javax.swing.JFrame {
     private java.awt.MenuBar menuBar1;
     private javax.swing.JPanel panelFirst;
     private javax.swing.JPanel panelSecond;
-    // End of declare
+    // End of variables declaration
 }
