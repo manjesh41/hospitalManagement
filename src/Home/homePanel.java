@@ -52,6 +52,8 @@ public class homePanel extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setText("ABC Hospital");
 
+
+        //logoutbutten
         BtnLogout.setBackground(new java.awt.Color(204, 0, 0));
         BtnLogout.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
         BtnLogout.setText("LOG-Out");
