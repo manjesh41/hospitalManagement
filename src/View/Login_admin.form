@@ -124,7 +124,7 @@
             <Component class="javax.swing.JLabel" name="lbl_4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Home/medical-appointment (1).png"/>
+                  <Image iconType="3" name="/View/medical-appointment (1).png"/>
                 </Property>
               </Properties>
             </Component>
@@ -291,14 +291,14 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Home/user (3).png"/>
+                  <Image iconType="3" name="/View/user (3).png"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Home/padlock (1).png"/>
+                  <Image iconType="3" name="/View/padlock (1).png"/>
                 </Property>
               </Properties>
             </Component>
@@ -385,7 +385,7 @@
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Home/log-in (1).png"/>
+                  <Image iconType="3" name="/View/log-in (1).png"/>
                 </Property>
               </Properties>
             </Component>

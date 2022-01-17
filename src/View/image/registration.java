@@ -2,7 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Home;
+package View.image;
+
+import View.Login_admin;
+
+import javax.swing.*;
 
 /**
  *
@@ -15,6 +19,7 @@ public class registration extends javax.swing.JFrame {
      */
     public registration() {
         initComponents();
+        setResizable(false);
     }
 
     /**
@@ -99,14 +104,45 @@ public class registration extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         jButton2.setText("BACK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton2ActionPerformed(evt);
+                new Login_admin().setVisible(true);
+                dispose();
             }
         });
+
+
+
+        //Register button action performer
 
         jButton1.setBackground(new java.awt.Color(51, 102, 255));
         jButton1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         jButton1.setText("REGISTER");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                if(jTextField1.getText().isEmpty() ||jTextField1.getText().isEmpty() ||jTextField2.getText().isEmpty() ||jTextField3.getText().isEmpty()
+                        ||jTextField4.getText().isEmpty() || jTextField5.getText().isEmpty() || jTextField6.getText().isEmpty()|| jTextField7.getText().isEmpty()  ) {
+                    JOptionPane.showMessageDialog(null,"Please fill the full information");
+                }
+                //else if (jTextField5.= initComponents();{
+
+                //}
+                else if(jTextField6.getText()!=jTextField7.getText()){
+                    JOptionPane.showMessageDialog(null,"Passwords do not match.");
+
+                }
+
+                
+                else{
+                    JOptionPane.showMessageDialog(null,"registration is succesfull");
+
+                }
+
+
+            }
+
+        });
 
         jLabel9.setFont(new java.awt.Font("MV Boli", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 255, 255));
@@ -178,8 +214,10 @@ public class registration extends javax.swing.JFrame {
                                                 .addComponent(jLabel5)
                                                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
+
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel6))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -188,7 +226,8 @@ public class registration extends javax.swing.JFrame {
                                 .addGap(20, 20, 20)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel8)
-                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTextField7, javax.swing.GroupLayout
+                                                .PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jButton2)
@@ -212,6 +251,8 @@ public class registration extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+
+
     }
 
     /**

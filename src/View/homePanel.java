@@ -1,4 +1,4 @@
-package Home;
+package View;
 
 public class homePanel extends javax.swing.JFrame {
 
@@ -87,12 +87,8 @@ public class homePanel extends javax.swing.JFrame {
         btnSpecialist.setAutoscrolls(true);
         btnSpecialist.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(51, 0, 51), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
         btnSpecialist.addActionListener(new java.awt.event.ActionListener() {
-
-            //button specialist action performer
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSpecialistActionPerformed(evt);
-                //
-
             }
         });
 
@@ -102,17 +98,18 @@ public class homePanel extends javax.swing.JFrame {
         btnDoctorDetails.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
         btnDoctorDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-
-                // Doctor details action performer
                 btnDoctorDetailsActionPerformed(evt);
-                // TODO add your handling code here:
             }
         });
 
         BtnScheduleAppointment.setBackground(new java.awt.Color(102, 102, 255));
         BtnScheduleAppointment.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         BtnScheduleAppointment.setText("Schedule Appointment");
+        BtnScheduleAppointment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnScheduleAppointmentActionPerformed(evt);
+            }
+        });
 
         jLabel3.setBackground(new java.awt.Color(204, 204, 255));
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -172,25 +169,25 @@ public class homePanel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>
 
-
-
-    //button specialist Action performer
-
     private void btnSpecialistActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
-//Doctor details button action performer
+
     private void btnDoctorDetailsActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-
-    //Logout button acttion performer
     private void BtnLogoutActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         new Login_admin().setVisible(true);
         dispose();
 
+    }
+
+    private void BtnScheduleAppointmentActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        new Schedule().setVisible(true);
+        dispose();
     }
 
     /**

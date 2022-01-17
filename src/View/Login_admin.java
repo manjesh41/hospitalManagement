@@ -1,11 +1,14 @@
-package Home;
+package View;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import View.image.registration;
+
 import javax.swing.*;
+
 
 /**
  *
@@ -13,11 +16,14 @@ import javax.swing.*;
  */
 public class Login_admin extends javax.swing.JFrame {
 
+    private Object e;
+
     /**
      * Creates new form Login_admin
      */
     public Login_admin() {
         initComponents();
+        setResizable(false);
     }
 
     /**
@@ -59,7 +65,7 @@ public class Login_admin extends javax.swing.JFrame {
         lbl_1.setText(" SWASTHA SEWA");
         lbl_1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Historic", 0, 18))); // NOI18N
 
-        lbl_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home/medical-appointment (1).png"))); // NOI18N
+        lbl_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/medical-appointment (1).png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Variable", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,9 +133,9 @@ public class Login_admin extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home/user (3).png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/user (3).png"))); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home/padlock (1).png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/padlock (1).png"))); // NOI18N
 
         loginBtn.setBackground(new java.awt.Color(51, 51, 51));
         loginBtn.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
@@ -163,14 +169,24 @@ public class Login_admin extends javax.swing.JFrame {
         jCheckBox1.setBackground(new java.awt.Color(0, 0, 0));
         jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("show");
-        jCheckBox1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 0, 51), new java.awt.Color(0, 51, 51), java.awt.Color.black, new java.awt.Color(51, 51, 0)));
+        jCheckBox1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border
+                .BevelBorder.RAISED, new java.awt.Color(51, 0, 51), new java.awt.Color(0, 51, 51),
+                java.awt.Color.black, new java.awt.Color(51, 51, 0)));
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
+                if(jCheckBox1.isSelected())
+                    password.setEchoChar((char) 0);
+                else
+                    password.setEchoChar('*');
+
+
             }
+
+
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home/log-in (1).png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/log-in (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -277,24 +293,79 @@ public class Login_admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_emailActionPerformed
 
+
+
+
+    //login button action performer
+
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loginBtnActionPerformed
+        String selectedCategory = comboBox.getSelectedItem().toString();
+        System.out.println(selectedCategory);
 
+
+        if (selectedCategory.equals("DOCTOR'S")) {
+//            new registration().setVisible(true);
+//            dispose();
+        } else if (selectedCategory.equals("PATIENT'S")) {
+//            new Schedule().setVisible(true);
+//            dispose();
+
+        }else if(selectedCategory.equals("ADMIN")) {
+            String user, pass;
+            user = txt_email.getText();
+            pass = password.getText();
+            if (user.equals("ADMIN") && pass.equals("ADMIN")) {
+                homePanel hp = new homePanel();
+                hp.show();
+
+            }else if(txt_email.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this,"please insert the email");
+            }else if(password.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this,"please insert the email");
+            }else if((txt_email.getText()!=("ADMIN")) && (password.getText()!=("ADMIN"))){
+                JOptionPane.showMessageDialog(this,"Incorrect Email or Password");
+
+
+
+            }
+
+            else{
+                JOptionPane.showMessageDialog(this,"Please enter valied Email and password");
+            }
+        }
+
+
+
+
+
+
+
+
+
+  }//GEN-LAST:event_loginBtnActionPerformed
+
+
+
+
+//register button
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
-        // TODO add your handling code here:
 
-       // if (selectedOpt.equals("DOCTOR")) {
+        String selectedCategory = comboBox.getSelectedItem().toString();
+        System.out.println(selectedCategory);
+
+
+        if (selectedCategory.equals("DOCTOR'S")) {
             new registration().setVisible(true);
             dispose();
-       // }
+        } else if (selectedCategory.equals("PATIENT'S")) {
+            new Patients_Reg().setVisible(true);
+            dispose();
 
 
 
-
+        }
     }
-    //GEN-LAST:event_registerBtnActionPerformed
-    //
 
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -332,6 +403,7 @@ public class Login_admin extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login_admin().setVisible(true);
+
             }
         });
     }
