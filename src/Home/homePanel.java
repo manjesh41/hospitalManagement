@@ -102,6 +102,9 @@ public class homePanel extends javax.swing.JFrame {
         btnDoctorDetails.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
         btnDoctorDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+
+                // Doctor details action performer
                 btnDoctorDetailsActionPerformed(evt);
                 // TODO add your handling code here:
             }
