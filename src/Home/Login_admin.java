@@ -18,6 +18,7 @@ public class Login_admin extends javax.swing.JFrame {
      */
     public Login_admin() {
         initComponents();
+        setResizable(false);
     }
 
     /**
@@ -163,11 +164,21 @@ public class Login_admin extends javax.swing.JFrame {
         jCheckBox1.setBackground(new java.awt.Color(0, 0, 0));
         jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("show");
-        jCheckBox1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 0, 51), new java.awt.Color(0, 51, 51), java.awt.Color.black, new java.awt.Color(51, 51, 0)));
+        jCheckBox1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border
+                .BevelBorder.RAISED, new java.awt.Color(51, 0, 51), new java.awt.Color(0, 51, 51),
+                java.awt.Color.black, new java.awt.Color(51, 51, 0)));
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
+                if(jCheckBox1.isSelected())
+                    password.setEchoChar((char) 0);
+                else
+                    password.setEchoChar('*');
+
+
             }
+
+
         });
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home/log-in (1).png"))); // NOI18N
@@ -332,6 +343,7 @@ public class Login_admin extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login_admin().setVisible(true);
+
             }
         });
     }
