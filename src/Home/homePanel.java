@@ -119,6 +119,9 @@ public class homePanel extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Find your doctor here!!");
 
+
+        //first panel
+
         javax.swing.GroupLayout panelFirstLayout = new javax.swing.GroupLayout(panelFirst);
         panelFirst.setLayout(panelFirstLayout);
         panelFirstLayout.setHorizontalGroup(
