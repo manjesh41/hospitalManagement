@@ -96,7 +96,7 @@ public class homePanel extends javax.swing.JFrame {
                 btnSpecialistActionPerformed(evt);
             }
         });
-
+   //doctor details button
         btnDoctorDetails.setBackground(new java.awt.Color(153, 255, 153));
         btnDoctorDetails.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnDoctorDetails.setText("Doctor Details");
