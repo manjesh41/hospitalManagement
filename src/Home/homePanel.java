@@ -186,6 +186,8 @@ public class homePanel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>
 
+
+    //button specaialist action performer
     private void btnSpecialistActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
