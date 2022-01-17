@@ -192,6 +192,9 @@ public class homePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
+
+
+    //button docotrdeatils action performer
     private void btnDoctorDetailsActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
