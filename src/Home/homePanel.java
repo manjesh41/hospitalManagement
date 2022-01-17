@@ -86,6 +86,8 @@ public class homePanel extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hospital-256.png"))); // NOI18N
 
+
+        //button specialist
         btnSpecialist.setBackground(new java.awt.Color(255, 102, 102));
         btnSpecialist.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         btnSpecialist.setText("Specialist");
