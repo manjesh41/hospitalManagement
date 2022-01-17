@@ -107,6 +107,8 @@ public class homePanel extends javax.swing.JFrame {
             }
         });
 
+        //schedule appointment button
+
         BtnScheduleAppointment.setBackground(new java.awt.Color(102, 102, 255));
         BtnScheduleAppointment.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         BtnScheduleAppointment.setText("Schedule Appointment");
