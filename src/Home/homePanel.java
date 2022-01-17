@@ -199,6 +199,8 @@ public class homePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
+
+    //butoon logout action performer
     private void BtnLogoutActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
