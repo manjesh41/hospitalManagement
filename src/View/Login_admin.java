@@ -316,13 +316,14 @@ public class Login_admin extends javax.swing.JFrame {
             user = txt_email.getText();
             pass = password.getText();
             if (user.equals("ADMIN") && pass.equals("ADMIN")) {
-                homePanel hp = new homePanel();
+                AdminPanel hp = new AdminPanel();
                 hp.show();
+                dispose();
 
             }else if(txt_email.getText().isEmpty()){
                 JOptionPane.showMessageDialog(this,"please insert the email");
             }else if(password.getText().isEmpty()){
-                JOptionPane.showMessageDialog(this,"please insert the email");
+                JOptionPane.showMessageDialog(this,"please insert the password");
             }else if((txt_email.getText()!=("ADMIN")) && (password.getText()!=("ADMIN"))){
                 JOptionPane.showMessageDialog(this,"Incorrect Email or Password");
 
