@@ -1,12 +1,5 @@
 package View;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-import View.image.registration;
-
 import javax.swing.*;
 
 
@@ -341,7 +334,7 @@ public class Login_admin extends javax.swing.JFrame {
 
 
         if (selectedCategory.equals("DOCTOR'S")) {
-            new registration().setVisible(true);
+            new Registration().setVisible(true);
             dispose();
         } else if (selectedCategory.equals("PATIENT'S")) {
             new Patients_Reg().setVisible(true);
