@@ -1,4 +1,4 @@
-package View;
+package View.dashboard;
 
 public class AdminPanel extends javax.swing.JFrame {
 

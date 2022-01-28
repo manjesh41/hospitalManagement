@@ -1,4 +1,4 @@
-package view.login;
+package View.login;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.*;
@@ -10,8 +10,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import controller.CustomerController;
 import model.Customer;
-import view.view.Dashboard;
-import view.view.registration;
+import View.view.Dashboard;
+import View.view.registration;
 public class LoginScreen implements ActionListener {
 
   JFrame frame;

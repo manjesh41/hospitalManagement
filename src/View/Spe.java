@@ -1,5 +1,7 @@
 package View;
 
+import View.dashboard.homePanel;
+
 public class Spe extends javax.swing.JFrame {
 
     // Variables declaration - do not modify
