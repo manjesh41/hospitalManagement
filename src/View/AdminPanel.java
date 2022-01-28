@@ -183,8 +183,8 @@ public class AdminPanel extends javax.swing.JFrame {
         );
 
 //java.net.URL imageURL = Login.class.getResource("login.jpg");
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("s-image.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+//        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("s-image.png"))); // NOI18N
+//        jLabel2.setText("jLabel2");
 
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
