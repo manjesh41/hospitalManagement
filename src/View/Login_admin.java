@@ -334,10 +334,10 @@ public class Login_admin extends javax.swing.JFrame {
 
 
         if (selectedCategory.equals("DOCTOR'S")) {
-            new Registration().setVisible(true);
+            new DoctorRegistration().setVisible(true);
             dispose();
         } else if (selectedCategory.equals("PATIENT'S")) {
-            new Patients_Reg().setVisible(true);
+            new registration().setVisible(true);
             dispose();
 
 
