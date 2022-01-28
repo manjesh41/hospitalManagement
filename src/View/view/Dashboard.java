@@ -1,4 +1,4 @@
-package view.view;
+package View.view;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;

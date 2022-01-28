@@ -1,9 +1,10 @@
-package view.view;
+package View.view;
 import java.sql.PreparedStatement;
 
 import controller.CustomerController;
 import model.Customer;
-import view.login.LoginScreen;
+import View.Login_admin;
+import View.login.LoginScreen;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -295,7 +296,7 @@ public class registration extends javax.swing.JFrame {
 
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        new LoginScreen().setVisible(true);
+        new Login_admin().setVisible(true);
         dispose();
 
     }
