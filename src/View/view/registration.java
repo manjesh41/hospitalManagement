@@ -342,7 +342,7 @@ public class registration extends javax.swing.JFrame {
     
     
     
-    // Variables declaration - do not modify
+    // Variables declaration - do not modifyyy
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -363,5 +363,5 @@ public class registration extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    // End of variables declaration
+    // end of variable
     }
