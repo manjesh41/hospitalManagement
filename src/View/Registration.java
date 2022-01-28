@@ -109,24 +109,7 @@ public class registration extends javax.swing.JFrame {
         jButton1.setText("REGISTER");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt){
-                if(jTextField1.getText().isEmpty() ||jTextField1.getText().isEmpty() ||jTextField2.getText().isEmpty() ||jTextField3.getText().isEmpty()
-                        ||jTextField4.getText().isEmpty() || jTextField5.getText().isEmpty() || jTextField6.getText().isEmpty()|| jTextField7.getText().isEmpty()  ) {
-                    JOptionPane.showMessageDialog(null,"Please fill the full information");
-                }
-                //else if (jTextField5.= initComponents();{
-
-                //}
-                else if(jTextField6.getText()!=jTextField7.getText()){
-                    JOptionPane.showMessageDialog(null,"Passwords do not match.");
-
-                }
-
-                
-                else{
-                    JOptionPane.showMessageDialog(null,"registration is succesfull");
-
-                }
-
+               
 
             }
 
