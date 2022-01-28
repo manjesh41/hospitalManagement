@@ -342,7 +342,7 @@ public class registration extends javax.swing.JFrame {
     
     
     
-    // varaiable declare - do not modifyyy
+    // varaiable declare - Do not modify
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
