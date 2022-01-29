@@ -18,10 +18,15 @@ public class AdminPanel extends javax.swing.JFrame {
 
     private void BtnDoctorActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new AdminDocInfo().setVisible(true);
+        dispose();
     }
 
     private void BtnPatientActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new AdminPacInfo().setVisible(true);
+        dispose();
+        
     }
 
     /**
@@ -155,6 +160,7 @@ public class AdminPanel extends javax.swing.JFrame {
         BtnAppointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnPatientActionPerformed(evt);
+                new AdminDoctor().setVisible(true);
             }
         });
 

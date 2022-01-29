@@ -49,7 +49,7 @@ public class AdminDoctor extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
 
         appLbl.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        appLbl.setText("Scheduled Appointment");
+        appLbl.setText("Schedule Appointment's");
 
         BackBtn.setBackground(new java.awt.Color(255, 0, 0));
         BackBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -57,8 +57,7 @@ public class AdminDoctor extends javax.swing.JFrame {
         BackBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackBtnActionPerformed(evt);
-                new AdminPanel().setVisible(true);
-                dispose();
+
             }
         });
 
@@ -182,6 +181,8 @@ public class AdminDoctor extends javax.swing.JFrame {
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
+        new AdminPanel().setVisible(true);
+        dispose();
     }                                       
 
     private void AcceptBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
