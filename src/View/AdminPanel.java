@@ -151,7 +151,12 @@ public class AdminPanel extends javax.swing.JFrame {
         BtnAppointment.setBackground(new java.awt.Color(51, 255, 0));
         BtnAppointment.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnAppointment.setText("Appointment's");
-        BtnAppointment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
+        BtnAppointment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255),5));
+        BtnAppointment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPatientActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -214,14 +214,20 @@ public class DoctorPanel extends javax.swing.JFrame {
 
     private void BtnPatientAppointmentActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new PatientAppointment().setVisible(true);
+        dispose();
     }
 
     private void BtnPatientinfoActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new PatientInformation().setVisible(true);
+        dispose();
     }
 
     private void BtnDoctorsActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new DoctorDetails_Docto_panel().setVisible(true);
+        dispose();
     }
 
     private void BtnLogoutActionPerformed(java.awt.event.ActionEvent evt) {
