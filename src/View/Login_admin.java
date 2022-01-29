@@ -373,8 +373,8 @@ public class Login_admin extends javax.swing.JFrame {
                 hp.show();
                 dispose();
 
-            }else if(txt_email.getText().isEmpty()){
-                JOptionPane.showMessageDialog(this,"please insert the email");
+            }else if(txt_email.getText().isEmpty()&&(password.getText().isEmpty())){
+                JOptionPane.showMessageDialog(this,"please insert the E-mail And Password");
             }else if(password.getText().isEmpty()){
                 JOptionPane.showMessageDialog(this,"please insert the password");
             }else if((txt_email.getText()!=("ADMIN")) && (password.getText()!=("ADMIN"))){
