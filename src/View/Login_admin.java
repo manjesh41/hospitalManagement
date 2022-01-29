@@ -1,16 +1,9 @@
 package View;
 
-import java.net.PasswordAuthentication;
+
+
 
 import javax.swing.*;
-
-import View.dashboard.AdminPanel;
-import View.dashboard.DoctorPanel;
-import View.dashboard.homePanel;
-import View.view.Dashboard;
-import View.view.registration;
-import controller.CustomerController;
-import model.Customer;
 
 
 /**
@@ -347,8 +340,9 @@ public class Login_admin extends javax.swing.JFrame {
             new DoctorRegistration().setVisible(true);
             dispose();
         } else if (selectedCategory.equals("PATIENT'S")) {
-            new registration().setVisible(true);
+            new registraton().setVisible(true);
             dispose();
+
 
 
         }
@@ -370,16 +364,7 @@ public class Login_admin extends javax.swing.JFrame {
             new DoctorPanel().setVisible(true);
             dispose();
         } else if (selectedCategory.equals("PATIENT'S")) {
-            {
-                CustomerController controller = new CustomerController();
-                Customer customer = controller.loginCustomer(txt_email.getText(),
-                 password.getText());
-                if (customer != null) {
-                  new Dashboard(customer);
-                }else{
-                  JOptionPane.showMessageDialog(null, "Invalid username or password");
-                }
-              }
+            new homePanel().setVisible(true);
             dispose();
 
 
@@ -392,8 +377,8 @@ public class Login_admin extends javax.swing.JFrame {
                 hp.show();
                 dispose();
 
-            }else if(txt_email.getText().isEmpty()&&(password.getText().isEmpty())){
-                JOptionPane.showMessageDialog(this,"please insert the E-mail And Password");
+            }else if(txt_email.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this,"please insert the email");
             }else if(password.getText().isEmpty()){
                 JOptionPane.showMessageDialog(this,"please insert the password");
             }else if((txt_email.getText()!=("ADMIN")) && (password.getText()!=("ADMIN"))){

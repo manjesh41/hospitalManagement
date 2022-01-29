@@ -169,7 +169,7 @@ public class DoctorDetails extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-        new ().setVisible(true);
+        new homePanel().setVisible(true);
         dispose();
     }                                        
 
