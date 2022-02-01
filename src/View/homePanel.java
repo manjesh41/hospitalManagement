@@ -1,4 +1,4 @@
-package View.dashboard;
+package View;
 
 public class homePanel extends javax.swing.JFrame {
 

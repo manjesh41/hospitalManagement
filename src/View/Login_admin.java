@@ -4,9 +4,6 @@ import java.net.PasswordAuthentication;
 
 import javax.swing.*;
 
-import View.dashboard.AdminPanel;
-import View.dashboard.DoctorPanel;
-import View.dashboard.homePanel;
 import View.view.Dashboard;
 import View.view.registration;
 import controller.CustomerController;
@@ -375,7 +372,7 @@ public class Login_admin extends javax.swing.JFrame {
                 Customer customer = controller.loginCustomer(txt_email.getText(),
                  password.getText());
                 if (customer != null) {
-                  new Dashboard(customer);
+                  
                 }else{
                   JOptionPane.showMessageDialog(null, "Invalid username or password");
                 }

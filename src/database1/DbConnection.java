@@ -18,7 +18,7 @@ public class DbConnection {
                     "jdbc:mysql://localhost:3306/customer?characterEncoding=utf8&useSSL=false&autoReconnect=true",
                     username, password);
             if (con != null) {
-                System.out.println("Connected to bhatbhateni Database");
+                System.out.println("Connected to Patient's  Database");
             } else {
                 System.out.println("Error connecting Database");
             }
