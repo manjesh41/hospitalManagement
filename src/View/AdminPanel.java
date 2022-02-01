@@ -1,7 +1,5 @@
 package View;
 
-import View.view.Dashboard;
-
 public class AdminPanel extends javax.swing.JFrame {
 
     /**
@@ -24,7 +22,6 @@ public class AdminPanel extends javax.swing.JFrame {
 
     private void BtnPatientActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        new Dashboard(null).setVisible(true);
     }
 
     /**

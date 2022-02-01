@@ -372,7 +372,7 @@ public class Login_admin extends javax.swing.JFrame {
                 Customer customer = controller.loginCustomer(txt_email.getText(),
                  password.getText());
                 if (customer != null) {
-                  
+                  new Dashboard(customer);
                 }else{
                   JOptionPane.showMessageDialog(null, "Invalid username or password");
                 }
