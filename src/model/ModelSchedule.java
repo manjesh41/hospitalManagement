@@ -7,38 +7,41 @@ public class ModelSchedule {
     private String jComboBoxGender;
     private String  TxtAreaProblems;
     private String jComboBoxDoctorName;
-    private String jspinner1;
-    private String monthSipner;
+    private String jSpinner1;
+    private String monthSipnner;
     private String DaySpinner;
+    private String TxtTime;
     private String jComboBoxTime;
 
     public ModelSchedule(){
         
     }
 
-    public ModelSchedule(String TxtPatient_Name,String ComboboxAge ,String jComboBoxGender,String TxtAreaProblems, String jComboBoxDoctorName,String jspinner1,String monthSipner,String DaySpinner,String jComboBoxTime){
+    public ModelSchedule(String TxtPatient_Name,String ComboboxAge ,String jComboBoxGender,String TxtAreaProblems, String jComboBoxDoctorName,String jSpinner1,String monthSipnner,String DaySpinner,String TxtTime,String jComboBoxTime){
         this.TxtPatient_Name = TxtPatient_Name;
         this.ComboboxAge = ComboboxAge;
         this.jComboBoxGender = jComboBoxGender;
         this.TxtAreaProblems = TxtAreaProblems;
         this.jComboBoxDoctorName = jComboBoxDoctorName;
-        this.jspinner1=jspinner1;
-        this.monthSipner=monthSipner;
+        this.jSpinner1=jSpinner1;
+        this.monthSipnner=monthSipnner;
         this.DaySpinner = DaySpinner;
-        this.jComboBoxTime =jComboBoxTime;
+        this.TxtTime =TxtTime;
+        this.jComboBoxTime=jComboBoxTime;
     }
 
-    public ModelSchedule(int PatientstId,String TxtPatient_Name,String ComboboxAge ,String jComboBoxGender,String TxtAreaProblems,String jComboBoxDoctorName,String jspinner1,String monthSipner,String DaySpinner,String jComboBoxTime){
+    public ModelSchedule(int PatientstId,String TxtPatient_Name,String ComboboxAge ,String jComboBoxGender,String TxtAreaProblems,String jComboBoxDoctorName,String jSpinner1,String monthSipnner,String DaySpinner,String TxtTime,String jComboBoxTime){
         this.PatientstId = PatientstId;
         this.TxtPatient_Name = TxtPatient_Name;
         this.ComboboxAge = ComboboxAge;
         this.jComboBoxGender = jComboBoxGender;
         this.TxtAreaProblems = TxtAreaProblems;
         this.jComboBoxDoctorName = jComboBoxDoctorName;
-        this.jspinner1=jspinner1;
-        this.monthSipner=monthSipner;
+        this.jSpinner1=jSpinner1;
+        this.monthSipnner=monthSipnner;
         this.DaySpinner = DaySpinner;
-        this.jComboBoxTime =jComboBoxTime;
+        this.TxtTime =TxtTime;
+        this.jComboBoxTime=jComboBoxTime;
     }
     
     public int getPatientstId() {
@@ -97,20 +100,21 @@ public class ModelSchedule {
             this.jComboBoxDoctorName = jComboBoxDoctorName;
      }
 
-    public String getJspinner1(){
-        return jspinner1;
+    public String getJSpinner1(){
+        return jSpinner1;
     } 
 
-    public void setJspinner1(){
-        this.jspinner1 = jspinner1;
+    public void setJSpinner1(String jSpinner1){
+        this.jSpinner1=jSpinner1;
     }
+    
 
-    public String getMonthSipner(){
-        return monthSipner;
+    public String getMonthSipnner(){
+        return monthSipnner;
     } 
 
-    public void setMonthSipner(){
-        this.monthSipner = monthSipner ;
+    public void setMonthSipnner(String monthSipnner){
+        this.monthSipnner = monthSipnner ;
     
     }
   
@@ -122,6 +126,14 @@ public class ModelSchedule {
         this.DaySpinner= DaySpinner;
     }
 
+    public String getTxtTime() {
+        return TxtTime;
+    }
+
+     public void setTxtTime(String TxtTime) {
+        this.TxtTime= TxtTime;
+    }
+
     public String getJComboBoxTime() {
         return jComboBoxTime;
     }
@@ -129,6 +141,10 @@ public class ModelSchedule {
      public void setJComboBoxTime(String jComboBoxTime) {
         this.jComboBoxTime= jComboBoxTime;
     }
+
+
+    
+    
 
     
     

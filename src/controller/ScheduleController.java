@@ -15,7 +15,7 @@ public class ScheduleController{
     public int registerSchedulePreparedStatement(ModelSchedule schedule) {
 
         try {
-            String query = "INSERT INTO `registerschedule`.`schedule` (`PatientName`, `Age`, `Gender`, `Problems`, `DoctorName`, `Year`, `Month`, `Day`, `Time`) VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?')";
+            String query = "INSERT INTO `registerschedule`.`schedule` (`PatientName`, `Age`, `Gender`, `Problems`, `DoctorName`, `Year`, `Month`, `Day`, `Time`,`Am_Pm`) VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?','?')";
 
             PreparedStatement st = db.con.prepareStatement(query);
 
@@ -25,9 +25,10 @@ public class ScheduleController{
             st.setString(4, schedule.getTxtAreaProblems());
             st.setString(5, schedule.getJcomboBoxDoctorName());
             st.setString(6, schedule.getJSpinner1());
-            st.setString(7, schedule.getMonthSipner());
+            st.setString(7, schedule.getMonthSipnner());
             st.setString(8, schedule.getDaySpinner());
-            st.setString(9, schedule.getJComboBoxTime());
+            st.setString(9, schedule.getTxtTime());
+            st.setString(10, schedule.getJComboBoxTime());
 
             
             return db.maniulate(st);
@@ -40,14 +41,15 @@ public class ScheduleController{
     // Register ;
     public static int registerSchedule(ModelSchedule schedule){
         String query;
-        query= "INSERT INTO schedule (PatientName, Age, Gender, Problems, DoctorName, Date, Time) VALUES ('"+
-        
-        schedule.getTxtPatient_Name()+"','"+
+        query= "INSERT INTO `registerschedule`.`schedule` (`PatientName`, `Age`, `Gender`, `Problems`, `DoctorName`, `Year`, `Month`, `Day`, `Time`, `Am_Pm`) VALUES'"+ 
         schedule.getComboboxAge()+"','"+
         schedule.getJComboBoxGender()+"','"+
         schedule.getTxtAreaProblems()+"','"+
         schedule.getJcomboBoxDoctorName()+"','"+
+        schedule.getJSpinner1()+"','"+
+        schedule.getMonthSipnner()+"','"+
         schedule.getDaySpinner()+"','"+
+        schedule.getTxtTime()+"','"+
         schedule.getJComboBoxTime()+"');";
         
         db = new ScheduleConnection();
@@ -71,8 +73,11 @@ public class ScheduleController{
                 schedule.setJComboBoxGender(rs.getString("JComboBoxGender"));
                 schedule.setTxtAreaProblems(rs.getString("TxtAreaProblems"));
                 schedule.setJcomboBoxDoctorName(rs.getString("jComboBoxDoctorName"));
+                schedule.setJSpinner1(rs.getString("jSpinner1"));
+                schedule.setMonthSipnner(rs.getString("monthSipnner"));
                 schedule.setDaySpinner(rs.getString("DaySpinner"));
-                schedule.setJComboBoxTime(rs.getString("jComboBoxTime"));
+                schedule.setTxtTime(rs.getString("TxtTime"));
+                schedule.setJComboBoxTime("jComboBoxTime");
 
                 lstSchedules.add(schedule);
             }

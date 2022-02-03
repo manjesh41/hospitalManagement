@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
 
 import controller.ScheduleController;
 import model.ModelSchedule;
+import database2.ScheduleConnection;
+
 
 /**
  *
@@ -334,16 +336,20 @@ public class Schedule extends javax.swing.JFrame {
     private void registerSchedule(){
             
         String PatientName = TxtPatient_Name.getText();
-        String Age = ComboboxAge.getToolkit().toString();
-        String Gender = jComboBoxGender.getToolkit().toString();
+        String Age = ComboboxAge.getSelectedItem().toString();
+        String Gender = jComboBoxGender.getSelectedItem().toString();
         String Problems = TxtAreaProblems.getText();
-        String DoctorName = ComboboxDoctor.getToolkit().toString();
-        String Date = DaySpinner.getToolkit().toString();
-        String Time = jComboBoxTime.getToolkit().toString();
+        String DoctorName = ComboboxDoctor.getSelectedItem().toString();
+        String Year = jSpinner1.getValue().toString();
+        String Month = monthSipnner.getValue().toString();
+        String Day = DaySpinner.getValue().toString();
+        String Time = TxtTime.getText();
+        String Am_Pm = jComboBoxTime.getSelectedItem().toString();
 
 
 
-        ModelSchedule schedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName, Date,Time );
+
+        ModelSchedule schedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName,Year,Month, Day,Time,Am_Pm );
         ScheduleController scheduleController = new ScheduleController();
         int insert = ScheduleController.registerSchedule(schedule);
         if (insert>0)
