@@ -450,6 +450,6 @@ public class Schedule extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel lblAppoinmentDate;
-    private javax.swing.JSpinner monthSipnne;
+    private javax.swing.JSpinner monthSipnner;
     // End of variables declaration                   
 }

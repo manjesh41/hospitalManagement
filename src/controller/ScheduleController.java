@@ -15,7 +15,7 @@ public class ScheduleController{
     public int registerSchedulePreparedStatement(ModelSchedule schedule) {
 
         try {
-            String query = "INSERT INTO schedule (PatientName, Age, Gender, Problems, DoctorName, Date, Time ) VALUES (?,?,?,?,?,?,/)";
+            String query = "INSERT INTO `registerschedule`.`schedule` (`PatientName`, `Age`, `Gender`, `Problems`, `DoctorName`, `Year`, `Month`, `Day`, `Time`) VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?')";
 
             PreparedStatement st = db.con.prepareStatement(query);
 
@@ -24,8 +24,10 @@ public class ScheduleController{
             st.setString(3, schedule.getJComboBoxGender());
             st.setString(4, schedule.getTxtAreaProblems());
             st.setString(5, schedule.getJcomboBoxDoctorName());
-            st.setString(6, schedule.getDaySpinner());
-            st.setString(6, schedule.getJComboBoxTime());
+            st.setString(6, schedule.getJSpinner1());
+            st.setString(7, schedule.getMonthSipner());
+            st.setString(8, schedule.getDaySpinner());
+            st.setString(9, schedule.getJComboBoxTime());
 
             
             return db.maniulate(st);
