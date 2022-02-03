@@ -1,13 +1,13 @@
 package database1;
 import java.sql.*;
 
-public class DbConnection {
+public class DoctorConnection {
     public Connection con;
     Statement st;
     ResultSet rows;
     int val;
 
-    public DbConnection() {
+    public DoctorConnection() {
         // register the driver class
         try {
             String username = "root";
@@ -15,10 +15,10 @@ public class DbConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
             // create the connection object
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/customer?characterEncoding=utf8&useSSL=false&autoReconnect=true",
+                    "jdbc:mysql://localhost:3306/doctor?characterEncoding=utf8&useSSL=false&autoReconnect=true",
                     username, password);
             if (con != null) {
-                System.out.println("Connected to Patient's  Database");
+                System.out.println("Connected to Doctor's Database");
             } else {
                 System.out.println("Error connecting Database");
             }
@@ -61,7 +61,7 @@ public class DbConnection {
         return rows;
     }
     public static void main(String[] args) {
-        new DbConnection();
+        new DoctorConnection();
     }
     
 }
