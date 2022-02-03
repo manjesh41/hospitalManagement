@@ -131,7 +131,7 @@ public class APanel extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify                     
     private javax.swing.JButton Abutton;
     private javax.swing.JLabel BannerJ;
@@ -142,6 +142,7 @@ public class APanel extends javax.swing.JFrame {
     private javax.swing.JPanel jpanelbg;
     // End of variables declaration                   
 }
+
 
 
         
