@@ -84,7 +84,7 @@ public class homePanel extends javax.swing.JFrame {
         panelSecond.setBackground(new java.awt.Color(153, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel1.setText("ABC Hospital");
+        jLabel1.setText("Swastha Sewa");
 
         BtnLogout.setBackground(new java.awt.Color(204, 0, 0));
         BtnLogout.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
@@ -207,6 +207,8 @@ public class homePanel extends javax.swing.JFrame {
 
     private void btnDoctorDetailsActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new DoctorDetails().setVisible(true);
+        dispose();
     }
 
     private void BtnLogoutActionPerformed(java.awt.event.ActionEvent evt) {
