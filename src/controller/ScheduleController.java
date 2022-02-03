@@ -42,6 +42,7 @@ public class ScheduleController{
     public static int registerSchedule(ModelSchedule schedule){
         String query;
         query= "INSERT INTO `registerschedule`.`schedule` (`PatientName`, `Age`, `Gender`, `Problems`, `DoctorName`, `Year`, `Month`, `Day`, `Time`, `Am_Pm`) VALUES'"+ 
+        schedule.getTxtPatient_Name()+"','"+
         schedule.getComboboxAge()+"','"+
         schedule.getJComboBoxGender()+"','"+
         schedule.getTxtAreaProblems()+"','"+

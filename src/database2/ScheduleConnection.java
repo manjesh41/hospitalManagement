@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class ScheduleConnection {
     public Connection con;
-   Statement st;
+    PreparedStatement st;
     ResultSet rows;
     int val;
 
