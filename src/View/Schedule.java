@@ -4,6 +4,11 @@ package View;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import javax.swing.JOptionPane;
+
+import controller.ScheduleController;
+import model.ModelSchedule;
+
 /**
  *
  * @author NoOne
@@ -316,7 +321,32 @@ public class Schedule extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>  
+    
+    
+    private void registerSchedule(){
+            
+        String PatientName = TxtPatient_Name.getText();
+        String Age = ComboboxAge.getToolkit().toString();
+        String Gender = jComboBoxGender.getToolkit().toString();
+        String Problems = TxtAreaProblems.getText();
+        String DoctorName = ComboboxDoctor.getToolkit().toString();
+        String Date = DaySpinner.getToolkit().toString();
+        String Time = jComboBoxTime.getToolkit().toString();
+
+
+
+        ModelSchedule schedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName, Date,Time );
+        ScheduleController scheduleController = new ScheduleController();
+        int insert = ScheduleController.registerSchedule(schedule);
+        if (insert>0)
+        JOptionPane.showMessageDialog(null, "register succesfully");
+        else
+            JOptionPane.showMessageDialog(null, "failed to register");
+
+
+    }
+
 
     private void TxtPatient_NameActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
@@ -333,6 +363,7 @@ public class Schedule extends javax.swing.JFrame {
 
     private void BtnScheduleActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
+        registerSchedule();
     }                                           
 
     private void BtnBackActionPerformed(java.awt.event.ActionEvent evt) {                                        

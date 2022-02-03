@@ -15,7 +15,7 @@ public class ScheduleController{
     public int registerSchedulePreparedStatement(ModelSchedule schedule) {
 
         try {
-            String query = "INSERT INTO schedule (PatientName, Age, Gender, Problems, DoctorName, Date, Time ) VALUES (?,?,?,?,?,?,/)";
+            String query = "INSERT INTO schedule (PatientName, Age, Gender, Problems, DoctorName, Date, Time ) VALUES (?,?,?,?,?,?,?)";
 
             PreparedStatement st = db.con.prepareStatement(query);
 
