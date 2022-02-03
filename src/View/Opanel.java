@@ -1,3 +1,5 @@
+package View;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -213,17 +215,18 @@ public class Opanel extends javax.swing.JFrame {
             }
         });
     }
+        // Variables declaration - do not modify                     
+        private javax.swing.JButton BackBtn;
+        private javax.swing.JLabel BackGround;
+        private javax.swing.JButton DermaBtn;
+        private javax.swing.JButton GynoBtn;
+        private javax.swing.JButton NeuroBtn;
+        private javax.swing.JButton OtpoBtn;
+        private javax.swing.JButton PedaBtn;
+        private javax.swing.JLabel SpecalistTxt;
+        private javax.swing.JPanel SpecialistBackground;
+        private javax.swing.JPanel jPanel1;
+        // End of variables declaration                   
+    }
+    
 
-    // Variables declaration - do not modify                     
-    private javax.swing.JButton BackBtn;
-    private javax.swing.JLabel BackGround;
-    private javax.swing.JButton DermaBtn;
-    private javax.swing.JButton GynoBtn;
-    private javax.swing.JButton NeuroBtn;
-    private javax.swing.JButton OtpoBtn;
-    private javax.swing.JButton PedaBtn;
-    private javax.swing.JLabel SpecalistTxt;
-    private javax.swing.JPanel SpecialistBackground;
-    private javax.swing.JPanel jPanel1;
-    // End of variables declaration                   
-}
