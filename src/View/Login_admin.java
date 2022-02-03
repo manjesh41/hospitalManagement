@@ -5,6 +5,7 @@ package View;
 
 import javax.swing.*;
 
+import View.view.registration;
 
 /**
  *
@@ -340,7 +341,8 @@ public class Login_admin extends javax.swing.JFrame {
             new DoctorRegistration().setVisible(true);
             dispose();
         } else if (selectedCategory.equals("PATIENT'S")) {
-            new registraton().setVisible(true);
+            // patient registration
+            new registration().setVisible(true);
             dispose();
 
 
