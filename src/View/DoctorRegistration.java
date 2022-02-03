@@ -1,5 +1,10 @@
 package View;
 
+import javax.swing.JOptionPane;
+
+import controller.DoctorController;
+import model.Doctor;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -136,7 +141,12 @@ public class DoctorRegistration extends javax.swing.JFrame {
         RegisterButton.setBackground(new java.awt.Color(51, 255, 51));
         RegisterButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         RegisterButton.setText("Register");
-
+        RegisterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            RegisterButtonActionPerformed(evt);
+            }
+            });
+        
         BackButton.setBackground(new java.awt.Color(255, 51, 51));
         BackButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BackButton.setText("Back");
@@ -241,8 +251,55 @@ public class DoctorRegistration extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>       
 
+    private void registerdoctor(){
+        String selectedCategory = SpecialistCombo.getSelectedItem().toString();
+        System.out.println(selectedCategory);
+        String a="";
+        if (selectedCategory.equals("Optometrist")) {
+            a="Optomerist";
+            
+        } else if (selectedCategory.equals("Gynecologist")) {
+            a="Gynecologist";
+        }else if (selectedCategory.equals("paediatrician")) {
+            a="paediatrician";
+        }else if (selectedCategory.equals("Neurotherapist")) {
+            a="Neurotherapist";
+        }else if (selectedCategory.equals("Dermatologist")) {
+            a="Dermatologist";
+        }    
+        
+        String fname = TxtFrstName.getText();
+        String lname = TxtlastName.getText();
+        String address = TxtAddress.getText();
+        String phone = TxtConact.getText();
+        String username = TxtEmail.getText();
+        String password = PasswordField.getText();
+        String Field = a;
+        String confirmPassword = ConfirmPassworrdField.getText();
+
+      
+        if(password.equals(confirmPassword)){
+            Doctor doctor = new Doctor(fname, lname, address, phone,Field, username, password);
+            DoctorController doctorController = new DoctorController();
+            int insert = doctorController.registerCustomer(doctor);
+            if (insert>0)
+            JOptionPane.showMessageDialog(null, "register succesfully");
+            else
+                JOptionPane.showMessageDialog(null, "failed to register");
+
+
+           
+        }else{
+            JOptionPane.showMessageDialog(null,"Password and Confirm Password does not match");
+            ConfirmPassworrdField.requestFocus();
+        }
+    }                 
+    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {    
+        registerdoctor();
+
+    }
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
     }                                             

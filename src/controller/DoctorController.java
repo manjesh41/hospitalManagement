@@ -14,7 +14,7 @@ public class DoctorController {
     public int registerCustomerPrepaedStatement(Doctor doctor) {
         try {
             String query = "insert into customer(custFname,custLname,address,phoneNo," +
-                    "username,password) values(?,?,?,?,?,?)";
+                    "username,Field,password) values(?,?,?,?,?,?,?)";
 
             PreparedStatement st = db.con.prepareStatement(query);
 
@@ -23,7 +23,8 @@ public class DoctorController {
             st.setString(4, doctor.getPhoneNo());
             st.setString(5, doctor.getAddress());
             st.setString(6, doctor.getUsername());
-            st.setString(7, doctor.getPassword());
+            st.setString(7, doctor.getField());
+            st.setString(8, doctor.getPassword());
 
             return db.maniulate(st);
         } catch (SQLException e) {
@@ -34,12 +35,13 @@ public class DoctorController {
     // Register customer;
     public int registerCustomer(Doctor doctor){
        String query;
-       query= "insert into doctor(custFname, custLname,address, phoneNo,username, password) values('"+
+       query= "insert into doctor(custFname, custLname,address, phoneNo,username,Field, password) values('"+
             doctor.getCustFname()+"','"+
             doctor.getCustLname()+"','"+
             doctor.getAddress()+"','"+
             doctor.getPhoneNo()+"','"+
             doctor.getUsername()+"','"+
+            doctor.getField()+"','"+
             doctor.getPassword()+"');";
        
        db = new DoctorConnection();
@@ -64,6 +66,8 @@ public class DoctorController {
                 doctor.setCustLname(rs.getString("custLname"));
                 doctor.setAddress(rs.getString("address"));
                 doctor.setUsername(rs.getString("username"));
+                doctor.setField(rs.getString("Field"));
+
             }
         } catch (Exception ex) {
             System.out.println("Error" + ex);
@@ -74,7 +78,7 @@ public class DoctorController {
 
     public List<Doctor> getAllCustomers() {
         String query;
-        query = "select * from customer";
+        query = "select * from doctor";
         db = new DoctorConnection();
         ResultSet rs = db.retrieve(query);
         List<Doctor> lstCustomers = new ArrayList<Doctor>();
@@ -88,6 +92,7 @@ public class DoctorController {
                 doctor.setPhoneNo(rs.getString("phoneNo"));
                 doctor.setAddress(rs.getString("address"));
                 doctor.setUsername(rs.getString("username"));
+                doctor.setField(rs.getString("Field"));
 
                 lstCustomers.add(doctor);
             }
