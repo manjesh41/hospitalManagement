@@ -11,7 +11,7 @@ public class DoctorConnection {
         // register the driver class
         try {
             String username = "root";
-            String password = "bikendra";
+            String password = "manjesh";
             Class.forName("com.mysql.cj.jdbc.Driver");
             // create the connection object
             con = DriverManager.getConnection(
