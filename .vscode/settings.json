@@ -4,6 +4,10 @@
         "lib/**/*.jar",
         "c:\\Users\\Nitro 5\\Desktop\\mysql-connector-java-8.0.27\\mysql-connector-java-8.0.27.jar",
         "c:\\Users\\hp\\Desktop\\mysql-connector-java-8.0.27\\mysql-connector-java-8.0.27.jar",
+<<<<<<< HEAD
         "c:\\Users\\user\\Downloads\\junit-4.13.2(1).jar"
+=======
+        "c:\\Users\\Omen\\Downloads\\junit-4.13.2.jar"
+>>>>>>> 21c55b58226bf390ee94df62cda1ea84670b9f6d
     ]
 }
