@@ -6,6 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.List;
+
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import View.homePanel;
+
 import java.util.ArrayList;
 
 public class CustomerController {
@@ -48,22 +54,18 @@ public class CustomerController {
 
     //Login Customer
     // Login customer
-    public Customer loginCustomer(String username, String password) {
+    public Customer loginCustomer(String username,String string) {
         String query;
         query = "select * from customer where username = '" + username +
-                "' and password = '" + password + "';";
+                "' and password = '" + string + "';";
 
         ResultSet rs = db.retrieve(query);
         Customer customer = null;
 
         try {
             while (rs.next()) {
-                customer = new Customer();
-                customer.setCustId(rs.getInt("custId"));
-                customer.setCustFname(rs.getString("custFname"));
-                customer.setCustLname(rs.getString("custLname"));
-                customer.setAddress(rs.getString("address"));
-                customer.setUsername(rs.getString("username"));
+                new homePanel().setVisible(true);
+                
             }
         } catch (Exception ex) {
             System.out.println("Error" + ex);
@@ -96,6 +98,9 @@ public class CustomerController {
         }
 
         return lstCustomers;
+    }
+    public CustomerController loginCustomer(Customer customer) {
+        return null;
     }
 }
 
