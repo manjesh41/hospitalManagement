@@ -16,7 +16,7 @@ public class ScheduleController{
     public int registerSchedulePrepaedStatement(ModelSchedule registerschedule) {
 
         try {
-            String query = "INSERT INTO `registerschedule`.`schedule` (`PatientName`, `Age`, `Gender`, `Problems`, `DoctorName`, `Year`, `Month`, `Day`, `Time`,`Am_Pm`) VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?','?')";
+            String query = "INSERT INTO schedule (PatientName, Age, Gender, Problems, DoctorName, Year, Month, Day, Time,Am_Pm) VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?','?')";
 
             PreparedStatement st = db.con.prepareStatement(query);
 
@@ -37,12 +37,12 @@ public class ScheduleController{
             e.printStackTrace();
             return 0;
         }
-    }
+ }
 
     // Register ;
     public static int registerSchedule(ModelSchedule registerschedule){
         String query;
-        query= "INSERT INTO `registerschedule`.`schedule` (`PatientName`, `Age`, `Gender`, `Problems`, `DoctorName`, `Year`, `Month`, `Day`, `Time`, `Am_Pm`) VALUES'"+ 
+        query= "INSERT INTO schedule (PatientName, Age, Gender, Problems, DoctorName, Year, Month, Day, Time, Am_Pm) VALUES'"+ 
         registerschedule.getTxtPatient_Name()+"','"+
         registerschedule.getComboboxAge()+"','"+
         registerschedule.getJComboBoxGender()+"','"+
@@ -61,14 +61,14 @@ public class ScheduleController{
 
      public List<ModelSchedule> getAllSchedules() {
         String query;
-        query = "select * from registerschedule";
+        query = "select * from schedule";
         db = new ScheduleConnection();
         ResultSet rs = db.retrieveregisterschedule(query);
         List<ModelSchedule> lstSchedules = new ArrayList<ModelSchedule>();
 
         try {
             while (rs.next()) {
-                ModelSchedule schedule = new ModelSchedule();
+                ModelSchedule registerschedule = new ModelSchedule();
                 registerschedule.setPatientstId(rs.getInt("PatientstId"));
                 registerschedule.setTxtPatient_Name(rs.getString("TxtPatient_Name"));
                 registersschedule.setTxtPatient_Name(rs.getString("TxtPatient_Name"));
