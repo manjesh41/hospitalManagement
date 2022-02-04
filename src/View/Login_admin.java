@@ -4,8 +4,9 @@ package View;
 
 
 import javax.swing.*;
-
+import controller.*;
 import View.view.registration;
+import model.*;
 
 /**
  *
@@ -13,8 +14,8 @@ import View.view.registration;
  */
 public class Login_admin extends javax.swing.JFrame {
 
-    private Object e;
 
+    private static final String Customer = null;
     /**
      * Creates new form Login_admin
      */
@@ -360,47 +361,56 @@ public class Login_admin extends javax.swing.JFrame {
         String selectedCategory = comboBox.getSelectedItem().toString();
         System.out.println(selectedCategory);
 
-
-        if (selectedCategory.equals("DOCTOR'S")) {
-
-            new DoctorPanel().setVisible(true);
-            dispose();
-        } else if (selectedCategory.equals("PATIENT'S")) {
-            new homePanel().setVisible(true);
-            dispose();
-
-
-        }else if(selectedCategory.equals("ADMIN")) {
             String user, pass;
             user = txt_email.getText();
             pass = password.getText();
-            if (user.equals("ADMIN") && pass.equals("ADMIN")) {
-                AdminPanel hp = new AdminPanel();
-                hp.show();
-                dispose();
-
+        if (selectedCategory.equals("DOCTOR'S")) {
+            String username = txt_email.getText();
+            String passw = password.getText();
+            try{
+                if(passw!="" && username!=""){
+                    DoctorController doctorController = new DoctorController();
+                    Doctor doctor = doctorController.loginCustomer(username,passw);
+                        if (doctor!=null){
+                            new DoctorPanel().setVisible(true);
+                            dispose();
+                        JOptionPane.showMessageDialog(null, "login succesfully");}
+                        else
+                            JOptionPane.showMessageDialog(null, "failed to login");
+                            }}catch(Exception e){
+                            JOptionPane.showMessageDialog(null, "invalid information");
+                            }
+        }else if (selectedCategory.equals("PATIENT'S")) {
+            String username = txt_email.getText();
+            String passw = password.getText();
+            try{
+                if(passw!="" && username!=""){
+                    CustomerController customerController = new CustomerController();
+                    Customer customer = customerController.loginCustomer(username,passw);
+                        if (customer!=null)
+                        JOptionPane.showMessageDialog(null, "login succesfully");
+                        else
+                            JOptionPane.showMessageDialog(null, "failed to login");
+                            }}catch(Exception e){
+                            JOptionPane.showMessageDialog(null, "invalid information");
+                            }
+            }else if(selectedCategory.equals("ADMIN")) {
+                if (user.equals("ADMIN") && pass.equals("ADMIN")) {
+                    AdminPanel hp = new AdminPanel();
+                    hp.show();
+                    dispose();
             }else if(txt_email.getText().isEmpty()){
                 JOptionPane.showMessageDialog(this,"please insert the email");
             }else if(password.getText().isEmpty()){
                 JOptionPane.showMessageDialog(this,"please insert the password");
             }else if((txt_email.getText()!=("ADMIN")) && (password.getText()!=("ADMIN"))){
                 JOptionPane.showMessageDialog(this,"Incorrect Email or Password");
-
-
-
             }
 
             else{
                 JOptionPane.showMessageDialog(this,"Please enter valied Email and password");
             }
         }
-
-
-
-
-
-
-
 
 
   }//GEN-LAST:event_loginBtnActionPerformed
