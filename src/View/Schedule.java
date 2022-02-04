@@ -351,7 +351,7 @@ public class Schedule extends javax.swing.JFrame {
 
         ModelSchedule schedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName,Year,Month, Day,Time,Am_Pm );
         ScheduleController scheduleController = new ScheduleController();
-        int insert = ScheduleController.registerSchedule(schedule);
+        int insert = scheduleController.registerSchedule(schedule);
         if (insert>0)
         JOptionPane.showMessageDialog(null, "register succesfully");
         else
