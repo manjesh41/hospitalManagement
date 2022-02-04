@@ -4,15 +4,17 @@ package View;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
+
 
 import javax.swing.JOptionPane;
+import java.sql.*;
 
 import controller.ScheduleController;
 import model.ModelSchedule;
 import database2.ScheduleConnection;
+
+
 
 
 /**
@@ -349,9 +351,9 @@ public class Schedule extends javax.swing.JFrame {
 
         
 
-        ModelSchedule registersschedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName,Year,Month, Day,Time,Am_Pm );
-        ScheduleController registersscheduleController = new ScheduleController();
-        int insert = registersscheduleController.registerSchedule(registersschedule);
+        ModelSchedule schedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName,Year,Month, Day,Time,Am_Pm );
+        ScheduleController scheduleController = new ScheduleController();
+        int insert = scheduleController.registerSchedule(schedule);
         if (insert>0)
         JOptionPane.showMessageDialog(null, "register succesfully");
         else
@@ -458,4 +460,5 @@ public class Schedule extends javax.swing.JFrame {
     private javax.swing.JLabel lblAppoinmentDate;
     private javax.swing.JSpinner monthSipnner;
     // End of variables declaration                   
+    
 }
