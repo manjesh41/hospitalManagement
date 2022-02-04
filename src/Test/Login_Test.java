@@ -1,34 +1,19 @@
 package Test;
+
 import controller.CustomerController;
-
-import View.Registration;
-
+import view.registration;
 import model.Customer;
-
 import org.junit.After;
-
-import org.junit.Test;
-
 import org.junit.Assert;
-
-
+import org.junit.Test;
 
 import java.util.ResourceBundle;
 
-
-
-public class RegistrationTesting {
-
+public class Login_Test {
 @Test
-
 public void registration(){
-
-Customer newCustomer = new Customer("Shashanka", "Dhungana", "9860617197", "Boudha", "shashanka", "password");
-
+Customer newCustomer = new Customer("Paras", "password");
 CustomerController customerController = new CustomerController();
-
 Assert.assertEquals(1, customerController.registerCustomer(newCustomer));
-
 }
-
 }
