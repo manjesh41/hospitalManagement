@@ -26,7 +26,7 @@ public class DoctorController {
             st.setString(7, doctor.getField());
             st.setString(8, doctor.getPassword());
 
-            return db.maniulate(st);
+            return db.maniulatedoctor(st);
         } catch (SQLException e) {
             e.printStackTrace();
             return 0;
@@ -45,7 +45,7 @@ public class DoctorController {
             doctor.getPassword()+"');";
        
        db = new DoctorConnection();
-       return db.maniulate(query);
+       return db.maniulatedoctor(query);
     }
 
     //Login Customer
@@ -55,7 +55,7 @@ public class DoctorController {
         query = "select * from customer where username = '" + username +
                 "' and password = '" + password + "';";
 
-        ResultSet rs = db.retrieve(query);
+        ResultSet rs = db.retrievedoctor(query);
         Doctor doctor = null;
 
         try {
@@ -80,7 +80,7 @@ public class DoctorController {
         String query;
         query = "select * from doctor";
         db = new DoctorConnection();
-        ResultSet rs = db.retrieve(query);
+        ResultSet rs = db.retrievedoctor(query);
         List<Doctor> lstCustomers = new ArrayList<Doctor>();
 
         try {

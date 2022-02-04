@@ -31,7 +31,7 @@ public class DoctorConnection {
     }
 
     // Used for insert, update, delete
-    public int maniulate(String query) {
+    public int maniulatedoctor(String query) {
 
         try {
             val = st.executeUpdate(query);
@@ -43,7 +43,7 @@ public class DoctorConnection {
         return val;
     }
     // method to insert data using prepared statement
-    public int maniulate(PreparedStatement st) {
+    public int maniulatedoctor(PreparedStatement st) {
         try {
             val = st.executeUpdate();
         } catch (SQLException e) {
@@ -52,7 +52,7 @@ public class DoctorConnection {
         return val;
     }
     // Used for select
-    public ResultSet retrieve(String query) {
+    public ResultSet retrievedoctor(String query) {
         try {
             rows = st.executeQuery(query);
         } catch (SQLException throwables) {
