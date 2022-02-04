@@ -21,7 +21,7 @@ import database2.ScheduleConnection;
  */
 public class Schedule extends javax.swing.JFrame {
     Connection con = null;
-    PreparedStatement pst = null;
+    PreparedStatement st = null;
     ResultSet rs = null;
 
     /**
