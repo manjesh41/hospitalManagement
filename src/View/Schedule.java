@@ -345,17 +345,19 @@ public class Schedule extends javax.swing.JFrame {
         String Day = DaySpinner.getValue().toString();
         String Time = TxtTime.getText();
         String Am_Pm = jComboBoxTime.getSelectedItem().toString();
-
+       
 
         
 
-        ModelSchedule registersschedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName,Year,Month, Day,Time,Am_Pm );
-        ScheduleController registersscheduleController = new ScheduleController();
-        int insert = registersscheduleController.registerSchedule(registersschedule);
+        ModelSchedule modelSchedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName,Year,Month, Day,Time,Am_Pm );
+        ScheduleController scheduleController = new ScheduleController();
+        int insert = scheduleController.registerSchedule(modelSchedule);
+        PatientName  =TxtPatient_Name.getText();
+        System.out.println(PatientName); 
         if (insert>0)
         JOptionPane.showMessageDialog(null, "register succesfully");
         else
-            JOptionPane.showMessageDialog(null, "failed to register");
+            JOptionPane.showMessageDialog(null, "failed");
 
 
     }

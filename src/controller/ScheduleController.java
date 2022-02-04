@@ -13,7 +13,7 @@ public class ScheduleController{
     static ScheduleConnection db = new ScheduleConnection();
     private ModelSchedule registersschedule;
 
-    public int registerSchedulePrepaedStatement(ModelSchedule registerschedule) {
+    public int registerSchedulePreparedStatement(ModelSchedule registerschedule) {
 
         try {
             String query = "INSERT INTO schedule (PatientName, Age, Gender, Problems, DoctorName, Year, Month, Day, Time,Am_Pm) VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?','?')";
