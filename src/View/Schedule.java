@@ -347,11 +347,11 @@ public class Schedule extends javax.swing.JFrame {
         String Am_Pm = jComboBoxTime.getSelectedItem().toString();
 
 
+        
 
-
-        ModelSchedule schedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName,Year,Month, Day,Time,Am_Pm );
-        ScheduleController scheduleController = new ScheduleController();
-        int insert = scheduleController.registerSchedule(schedule);
+        ModelSchedule registersschedule = new ModelSchedule(PatientName, Age, Gender, Problems,DoctorName,Year,Month, Day,Time,Am_Pm );
+        ScheduleController registersscheduleController = new ScheduleController();
+        int insert = registersscheduleController.registerSchedule(registersschedule);
         if (insert>0)
         JOptionPane.showMessageDialog(null, "register succesfully");
         else

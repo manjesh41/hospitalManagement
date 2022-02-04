@@ -19,8 +19,7 @@ public class ScheduleConnection {
     
     public ScheduleConnection() {
         // register the driver class
-        Connection con =null;
-        PreparedStatement st =null;
+        
         try {
             String username = "root";
             String password = "root";
@@ -76,6 +75,18 @@ public class ScheduleConnection {
     }
     public static void main(String[] args) {
         new ScheduleConnection();
+    }
+
+    public int maniulateregisterschedule(PreparedStatement st2) {
+        return 0;
+    }
+
+    public int maniulateregisterschedule(String query) {
+        return 0;
+    }
+
+    public ResultSet retrieveregisterschedule(String query) {
+        return null;
     }
     
 }
