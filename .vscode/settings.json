@@ -3,5 +3,9 @@
     "java.project.sourcePaths": [
         "src",
         "Test"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\user\\Downloads\\junit-4.13.2(1).jar"
     ]
 }
