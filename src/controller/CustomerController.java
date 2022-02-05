@@ -6,12 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.List;
-
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-
-import View.homePanel;
-
 import java.util.ArrayList;
 
 public class CustomerController {

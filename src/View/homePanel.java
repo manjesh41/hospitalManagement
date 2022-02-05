@@ -1,5 +1,10 @@
 package View;
 
+import View.view.Doctordetailsb;
+import database1.DoctorConnection;
+import model.Customer;
+import model.Doctor;
+
 public class homePanel extends javax.swing.JFrame {
 
     /**
@@ -207,7 +212,8 @@ public class homePanel extends javax.swing.JFrame {
 
     private void btnDoctorDetailsActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        new DoctorDetails().setVisible(true);
+        Doctor doctor = new Doctor();
+        new Doctordetailsb(doctor).setVisible(true);
         dispose();
     }
 
