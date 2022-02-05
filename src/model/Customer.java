@@ -12,10 +12,6 @@ public class Customer {
     public Customer(){
         
     }
-    public Customer(String username,String password){
-        this.username = username;
-        this.password = password;
-    }
 
     public Customer(String custFname,String custLname ,String address,String phoneNo, String username,String password){
         this.custFname = custFname;

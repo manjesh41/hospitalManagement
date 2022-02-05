@@ -52,7 +52,7 @@ public class DoctorController {
     // Login customer
     public Doctor loginCustomer(String username, String password) {
         String query;
-        query = "select * from customer where username = '" + username +
+        query = "select * from doctor where username = '" + username +
                 "' and password = '" + password + "';";
 
         ResultSet rs = db.retrievedoctor(query);

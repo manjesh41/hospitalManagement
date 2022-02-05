@@ -54,17 +54,21 @@ public class CustomerController {
 
     //Login Customer
     // Login customer
-    public Customer loginCustomer(String username,String string) {
+    public Customer loginCustomer(String username,String passw) {
         String query;
         query = "select * from customer where username = '" + username +
-                "' and password = '" + string + "';";
+                "' and password = '" + passw + "';";
 
         ResultSet rs = db.retrieve(query);
         Customer customer = null;
 
         try {
-            while (rs.next()) {
-                new homePanel().setVisible(true);
+            while (rs.next()) {customer = new Customer();
+                customer.setCustId(rs.getInt("custId"));
+                customer.setCustFname(rs.getString("custFname"));
+                customer.setCustLname(rs.getString("custLname"));
+                customer.setAddress(rs.getString("address"));
+                customer.setUsername(rs.getString("username"));
                 
             }
         } catch (Exception ex) {
