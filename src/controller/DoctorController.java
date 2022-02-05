@@ -14,7 +14,7 @@ public class DoctorController {
     public int registerCustomerPrepaedStatement(Doctor doctor) {
         try {
             String query = "insert into customer(custFname,custLname,address,phoneNo," +
-                    "username,Field,password) values(?,?,?,?,?,?,?)";
+                    "Field,username,,password) values(?,?,?,?,?,?,?)";
 
             PreparedStatement st = db.con.prepareStatement(query);
 
@@ -22,8 +22,8 @@ public class DoctorController {
             st.setString(2, doctor.getCustLname());
             st.setString(4, doctor.getPhoneNo());
             st.setString(5, doctor.getAddress());
-            st.setString(6, doctor.getUsername());
             st.setString(7, doctor.getField());
+            st.setString(6, doctor.getUsername());
             st.setString(8, doctor.getPassword());
 
             return db.maniulatedoctor(st);
@@ -35,13 +35,13 @@ public class DoctorController {
     // Register customer;
     public int registerCustomer(Doctor doctor){
        String query;
-       query= "insert into doctor(custFname, custLname,address, phoneNo,username,Field, password) values('"+
+       query= "insert into doctor(custFname, custLname,address, phoneNo,Field,username, password) values('"+
             doctor.getCustFname()+"','"+
             doctor.getCustLname()+"','"+
             doctor.getAddress()+"','"+
             doctor.getPhoneNo()+"','"+
-            doctor.getUsername()+"','"+
             doctor.getField()+"','"+
+            doctor.getUsername()+"','"+
             doctor.getPassword()+"');";
        
        db = new DoctorConnection();

@@ -274,9 +274,9 @@ public class DoctorRegistration extends javax.swing.JFrame {
         String lname = TxtlastName.getText();
         String address = TxtAddress.getText();
         String phone = TxtConact.getText();
+        String Field = a;
         String username = TxtEmail.getText();
         String password = PasswordField.getText();
-        String Field = a;
         String confirmPassword = ConfirmPassworrdField.getText();
 
       

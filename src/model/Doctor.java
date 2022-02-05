@@ -14,7 +14,7 @@ public class Doctor {
         
     }
 
-    public Doctor(String custFname,String custLname ,String address,String phoneNo, String username,String Field,String password){
+    public Doctor(String custFname,String custLname ,String address,String phoneNo,String Field, String username,String password){
         this.custFname = custFname;
         this.custLname = custLname;
         this.phoneNo = phoneNo;
@@ -24,7 +24,7 @@ public class Doctor {
         this.password = password;
     }
 
-    public Doctor(int custId,String custFname,String custLname ,String address,String phoneNo,String username,String Field, String password){
+    public Doctor(int custId,String custFname,String custLname ,String address,String phoneNo,String Field, String username,String password){
         this.custId = custId;
         this.custFname = custFname;
         this.custLname = custLname;
