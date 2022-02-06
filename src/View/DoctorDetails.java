@@ -9,7 +9,7 @@ package View;
  *
  * @author NoOne
  */
-public class DoctorDetails extends javax.swing.JFrame {
+public class DoctorDetails extends javax.swing.JFrame{
 
     /**
      * Creates new form DoctorDetails
@@ -89,21 +89,7 @@ public class DoctorDetails extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        searchTxtF.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        searchTxtF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchTxtFActionPerformed(evt);
-            }
-        });
-
-        SearchBtn.setBackground(new java.awt.Color(0, 204, 0));
-        SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        SearchBtn.setText("Search");
-        SearchBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchBtnActionPerformed(evt);
-            }
-        });
+        
 
         thirdPanel.setBackground(new java.awt.Color(0, 153, 153));
         thirdPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(204, 204, 204), null));
@@ -127,6 +113,21 @@ public class DoctorDetails extends javax.swing.JFrame {
                     .addComponent(jScrollvertical, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+        searchTxtF.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        searchTxtF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchTxtFActionPerformed(evt);
+            }
+        });
+
+        SearchBtn.setBackground(new java.awt.Color(0, 204, 0));
+        SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        SearchBtn.setText("Search");
+        SearchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

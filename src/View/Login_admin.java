@@ -63,7 +63,7 @@ public class Login_admin extends javax.swing.JFrame {
         lbl_1.setText(" SWASTHA SEWA");
         lbl_1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Historic", 0, 18))); // NOI18N
 
-    //    lbl_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/medical-appointment (1).png"))); // NOI18N
+        lbl_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/medical-appointment (1).png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Variable", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,9 +131,9 @@ public class Login_admin extends javax.swing.JFrame {
             }
         });
 
-        // jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/user (3).png"))); // NOI18N
+         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/user (3).png"))); // NOI18N
 
-        // jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/padlock (1).png"))); // NOI18N
+         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/padlock (1).png"))); // NOI18N
 
         loginBtn.setBackground(new java.awt.Color(51, 51, 51));
         loginBtn.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N

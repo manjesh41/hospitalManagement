@@ -275,7 +275,7 @@ public class registration extends javax.swing.JFrame {
         String confirmPassword = jTextField7.getText();
         
         try{
-            if(password.equals(confirmPassword)){
+            if(password.equals(confirmPassword)&& username=="" && password=="" && fname=="" && lname==""){
                 Customer customer = new Customer(fname, lname, address, phone, username, password);
                 CustomerController customerController = new CustomerController();
                 int insert = customerController.registerCustomer(customer);
@@ -284,8 +284,6 @@ public class registration extends javax.swing.JFrame {
                 else
                     JOptionPane.showMessageDialog(null, "failed to register");
     
-    
-               
             }else{
                 JOptionPane.showMessageDialog(null,"Password and Confirm Password does not match");
                 jTextField7.requestFocus();
