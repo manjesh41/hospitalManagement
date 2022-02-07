@@ -4,6 +4,15 @@ package View;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import java.awt.Font;
+import java.util.List;
+import java.awt.*;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import controller.DoctorController;
+import model.Doctor;
+
 /**
  *
  * @author NoOne
@@ -16,6 +25,10 @@ public class DoctorDetails_Docto_panel extends javax.swing.JFrame {
     public DoctorDetails_Docto_panel() {
         initComponents();
     }
+    Object[] columns = { "First name", "Last Name", "Phone", "Address","Field" };
+    String data[][];
+    JTable table;
+    DefaultTableModel model;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,6 +62,12 @@ public class DoctorDetails_Docto_panel extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setText("Doctor's Details");
+        fillArray();
+        jTable1.setBackground(new java.awt.Color(0, 153, 204));
+        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 255));
+        jTable1.setModel(model);
+        jScrollPane1.setViewportView(jTable1);
 
         jButton1.setBackground(new java.awt.Color(255, 0, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -58,9 +77,9 @@ public class DoctorDetails_Docto_panel extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
+        
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -106,25 +125,6 @@ public class DoctorDetails_Docto_panel extends javax.swing.JFrame {
 
         thirdPanel.setBackground(new java.awt.Color(0, 153, 153));
         thirdPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(204, 204, 204), null));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "First Name", "Last Name", "Specialist", "E-mail", "Contact"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
         javax.swing.GroupLayout thirdPanelLayout = new javax.swing.GroupLayout(thirdPanel);
         thirdPanel.setLayout(thirdPanelLayout);
         thirdPanelLayout.setHorizontalGroup(
@@ -174,6 +174,22 @@ public class DoctorDetails_Docto_panel extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>                        
+    private void fillArray() {
+        DoctorController controller = new DoctorController();
+        List<Doctor> lstCustomer = controller.getAllCustomers();
+        
+        data = new String[lstCustomer.size()][5];
+
+        for (int i = 0; i < lstCustomer.size(); i++) {
+            System.out.println(lstCustomer.get(i).getCustFname());
+            data[i][0] = lstCustomer.get(i).getCustFname();
+            data[i][1] = lstCustomer.get(i).getCustLname();
+            data[i][2] = lstCustomer.get(i).getPhoneNo();
+            data[i][3] = lstCustomer.get(i).getAddress();
+            data[i][4] = lstCustomer.get(i).getField();
+        }
+        model = new DefaultTableModel(data, columns);
+    }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:

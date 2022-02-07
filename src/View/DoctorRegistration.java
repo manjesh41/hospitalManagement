@@ -280,7 +280,7 @@ public class DoctorRegistration extends javax.swing.JFrame {
         String confirmPassword = ConfirmPassworrdField.getText();
 
       
-        if(password.equals(confirmPassword)&& fname=="" && lname=="" && lname=="" && username=="" && password==""){
+        if(password.equals(confirmPassword)){
             Doctor doctor = new Doctor(fname, lname, address, phone,Field, username, password);
             DoctorController doctorController = new DoctorController();
             int insert = doctorController.registerCustomer(doctor);

@@ -72,12 +72,6 @@ public class PatientInformation extends javax.swing.JFrame {
        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
        jLabel2.setText("Swastha Sewa");
        fillArray();
-       table = new JTable(model);
-
-        table.setFont(new Font("Serif", Font.ITALIC, 16));
-        table.setSelectionBackground(Color.green);
-        table.getTableHeader().setBackground(Color.yellow);
-        table.getTableHeader().setFont(new Font("Serif", Font.BOLD, 16));
        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
        jPanel4.setLayout(jPanel4Layout);
        jPanel4Layout.setHorizontalGroup(
@@ -163,7 +157,6 @@ public class PatientInformation extends javax.swing.JFrame {
        new DoctorPanel().setVisible(true);
                dispose();
    }                                       
-
    /**
     * @param args the command line arguments
     */
