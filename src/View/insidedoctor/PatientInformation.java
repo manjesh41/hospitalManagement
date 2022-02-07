@@ -7,10 +7,6 @@ import javax.swing.table.DefaultTableModel;
 
 import controller.CustomerController;
 import model.Customer;
-
-import java.awt.*;
-
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
 /**
 *

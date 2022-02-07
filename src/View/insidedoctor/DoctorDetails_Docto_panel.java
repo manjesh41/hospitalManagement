@@ -4,9 +4,7 @@ package View.insidedoctor;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-import java.awt.Font;
 import java.util.List;
-import java.awt.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
