@@ -1,4 +1,4 @@
-package View;
+package View.insidePatient;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import View.Spe;
 import controller.DoctorController;
 import model.Doctor;
 
@@ -16,11 +17,11 @@ import model.Doctor;
  *
  * @author NoOne
  */
-public class Dermatologists extends javax.swing.JFrame {
+public class Neurotherapist extends javax.swing.JFrame {
     /**
      * Creates new form Paediatrician
      */
-    public Dermatologists() {
+    public Neurotherapist() {
         initComponents();
     }
     Object[] columns = { "First name", "Last Name", "Phone", "Address","Field" };
@@ -50,7 +51,7 @@ public class Dermatologists extends javax.swing.JFrame {
 
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Dermatologists");
+        setTitle("Neurotherapist");
         fillArray();
         jTable1.setBackground(new java.awt.Color(0, 153, 204));
        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -65,7 +66,7 @@ public class Dermatologists extends javax.swing.JFrame {
 
         LblTitle.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         LblTitle.setForeground(new java.awt.Color(255, 255, 255));
-        LblTitle.setText("Dermatologists");
+        LblTitle.setText("Neurotherapist");
 
         BackBtn.setBackground(new java.awt.Color(255, 0, 51));
         BackBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -139,7 +140,7 @@ public class Dermatologists extends javax.swing.JFrame {
     }// </editor-fold>               
     private void fillArray() {
         DoctorController controller = new DoctorController();
-        List<Doctor> lstCustomer = controller.dermatologiList();
+        List<Doctor> lstCustomer = controller.neurList();
         
         data = new String[lstCustomer.size()][5];
 
@@ -193,7 +194,7 @@ public class Dermatologists extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dermatologists().setVisible(true);
+                new Neurotherapist().setVisible(true);
             }
         });
     }

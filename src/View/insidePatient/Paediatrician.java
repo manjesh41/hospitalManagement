@@ -1,23 +1,33 @@
-package View;
-
-
+package View.insidePatient;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
+import java.util.List;
+
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import View.Spe;
+import controller.DoctorController;
+import model.Doctor;
 
 /**
  *
  * @author NoOne
  */
 public class Paediatrician extends javax.swing.JFrame {
-
     /**
      * Creates new form Paediatrician
      */
     public Paediatrician() {
         initComponents();
     }
+    Object[] columns = { "First name", "Last Name", "Phone", "Address","Field" };
+    String data[][];
+    JTable table;
+    DefaultTableModel model;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,21 +49,15 @@ public class Paediatrician extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Paediatrician");
+        fillArray();
+        jTable1.setBackground(new java.awt.Color(0, 153, 204));
+       jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+       jTable1.setForeground(new java.awt.Color(0, 0, 255));
+       jTable1.setModel(model);
+       jScrollPane1.setViewportView(jTable1);
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 153));
 
@@ -75,8 +79,10 @@ public class Paediatrician extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 0));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51)); 
         jLabel1.setText("Swastha Sewa");
+
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -104,29 +110,19 @@ public class Paediatrician extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "First Name", "Last Name", "Contact", "E-Mail"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,7 +137,23 @@ public class Paediatrician extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>               
+    private void fillArray() {
+        DoctorController controller = new DoctorController();
+        List<Doctor> lstCustomer = controller.paediatList();
+        
+        data = new String[lstCustomer.size()][5];
+
+        for (int i = 0; i < lstCustomer.size(); i++) {
+            System.out.println(lstCustomer.get(i).getCustFname());
+            data[i][0] = lstCustomer.get(i).getCustFname();
+            data[i][1] = lstCustomer.get(i).getCustLname();
+            data[i][2] = lstCustomer.get(i).getPhoneNo();
+            data[i][3] = lstCustomer.get(i).getAddress();
+            data[i][4] = lstCustomer.get(i).getField();
+        }
+        model = new DefaultTableModel(data, columns);
+    }         
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
@@ -182,7 +194,7 @@ public class Paediatrician extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dermatologists().setVisible(true);
+                new Paediatrician().setVisible(true);
             }
         });
     }

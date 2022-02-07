@@ -5,6 +5,8 @@ package View;
 
 import javax.swing.*;
 import controller.*;
+import View.insidePatient.homePanel;
+import View.insidedoctor.DoctorPanel;
 import View.view.registration;
 import model.*;
 

@@ -258,7 +258,7 @@ public class DoctorRegistration extends javax.swing.JFrame {
         System.out.println(selectedCategory);
         String a="";
         if (selectedCategory.equals("Optometrist")) {
-            a="Optomerist";
+            a="Optometrist";
             
         } else if (selectedCategory.equals("Gynecologist")) {
             a="Gynecologist";

@@ -1,5 +1,8 @@
-package View;
+package View.insidePatient;
 
+import View.Login_admin;
+import View.Schedule;
+import View.Spe;
 import View.view.Doctordetailsb;
 import database1.DoctorConnection;
 import model.Customer;

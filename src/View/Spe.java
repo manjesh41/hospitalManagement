@@ -1,5 +1,12 @@
 package View;
 
+import View.insidePatient.Dermatologists;
+import View.insidePatient.Gynecologist;
+import View.insidePatient.Neurotherapist;
+import View.insidePatient.Optometrist;
+import View.insidePatient.Paediatrician;
+import View.insidePatient.homePanel;
+
 public class Spe extends javax.swing.JFrame {
 
     /**

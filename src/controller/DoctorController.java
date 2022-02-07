@@ -102,6 +102,110 @@ public class DoctorController {
 
         return lstCustomers;
     }
+    public List<Doctor> neurList() {
+        String query;
+        query = "select * from doctor where Field = 'Neurotherapist'";
+        db = new DoctorConnection();
+        ResultSet rs = db.retrievedoctor(query);
+        List<Doctor> lstCustomers = new ArrayList<Doctor>();
+
+        try {
+            while (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setCustId(rs.getInt("custId"));
+                doctor.setCustFname(rs.getString("custFname"));
+                doctor.setCustLname(rs.getString("custLname"));
+                doctor.setPhoneNo(rs.getString("phoneNo"));
+                doctor.setAddress(rs.getString("address"));
+                doctor.setUsername(rs.getString("username"));
+                doctor.setField(rs.getString("Field"));
+
+                lstCustomers.add(doctor);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+
+        return lstCustomers;
+    }
+    public List<Doctor> gynList() {
+        String query;
+        query = "select * from doctor where Field = 'Gynecologist'";
+        db = new DoctorConnection();
+        ResultSet rs = db.retrievedoctor(query);
+        List<Doctor> lstCustomers = new ArrayList<Doctor>();
+
+        try {
+            while (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setCustId(rs.getInt("custId"));
+                doctor.setCustFname(rs.getString("custFname"));
+                doctor.setCustLname(rs.getString("custLname"));
+                doctor.setPhoneNo(rs.getString("phoneNo"));
+                doctor.setAddress(rs.getString("address"));
+                doctor.setUsername(rs.getString("username"));
+                doctor.setField(rs.getString("Field"));
+
+                lstCustomers.add(doctor);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+
+        return lstCustomers;
+    }
+    public List<Doctor> optoList() {
+        String query;
+        query = "select * from doctor where Field = 'Optometrist'";
+        db = new DoctorConnection();
+        ResultSet rs = db.retrievedoctor(query);
+        List<Doctor> lstCustomers = new ArrayList<Doctor>();
+
+        try {
+            while (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setCustId(rs.getInt("custId"));
+                doctor.setCustFname(rs.getString("custFname"));
+                doctor.setCustLname(rs.getString("custLname"));
+                doctor.setPhoneNo(rs.getString("phoneNo"));
+                doctor.setAddress(rs.getString("address"));
+                doctor.setUsername(rs.getString("username"));
+                doctor.setField(rs.getString("Field"));
+
+                lstCustomers.add(doctor);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+
+        return lstCustomers;
+    }
+    public List<Doctor> paediatList() {
+        String query;
+        query = "select * from doctor where Field = 'Paediatrician'";
+        db = new DoctorConnection();
+        ResultSet rs = db.retrievedoctor(query);
+        List<Doctor> lstCustomers = new ArrayList<Doctor>();
+
+        try {
+            while (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setCustId(rs.getInt("custId"));
+                doctor.setCustFname(rs.getString("custFname"));
+                doctor.setCustLname(rs.getString("custLname"));
+                doctor.setPhoneNo(rs.getString("phoneNo"));
+                doctor.setAddress(rs.getString("address"));
+                doctor.setUsername(rs.getString("username"));
+                doctor.setField(rs.getString("Field"));
+
+                lstCustomers.add(doctor);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+
+        return lstCustomers;
+    }
     public List<Doctor> dermatologiList() {
         String query;
         query = "select * from doctor where Field = 'Dermatologist'";

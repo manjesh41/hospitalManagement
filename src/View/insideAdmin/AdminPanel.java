@@ -1,5 +1,7 @@
 package View;
 
+import View.insideAdmin.AdminDocInfo;
+
 public class AdminPanel extends javax.swing.JFrame {
 
     /**

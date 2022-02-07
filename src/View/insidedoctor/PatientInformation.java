@@ -1,5 +1,5 @@
 
-package View;
+package View.insidedoctor;
 
 import java.util.List;
 
