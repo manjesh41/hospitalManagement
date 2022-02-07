@@ -74,10 +74,10 @@ public class DoctorController {
         }
 
         return doctor;
-    }
+   }
     public List<Doctor> searchlList(String username) {
         String query;
-        query = "select * from doctor where username='"+username+"';";
+        query = "select * from doctor where custFname='"+username+"';";
         db = new DoctorConnection();
         ResultSet rs = db.retrievedoctor(query);
         List<Doctor> lstCustomers = new ArrayList<Doctor>();

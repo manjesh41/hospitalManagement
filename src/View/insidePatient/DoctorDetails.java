@@ -10,7 +10,6 @@ import java.awt.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import View.insidedoctor.DoctorPanel;
 import controller.DoctorController;
 import model.Doctor;
 
@@ -109,11 +108,6 @@ public class DoctorDetails extends javax.swing.JFrame {
         );
 
         searchTxtF.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        searchTxtF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchTxtFActionPerformed(evt);
-            }
-        });
 
         SearchBtn.setBackground(new java.awt.Color(0, 204, 0));
         SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -192,20 +186,52 @@ public class DoctorDetails extends javax.swing.JFrame {
         model = new DefaultTableModel(data, columns);
     }
 
+    private void fill() {
+       String username = searchTxtF.getText();
+       DoctorController controller = new DoctorController();
+       List<Doctor> lstCustomer = controller.searchlList(username);
+        
+     data = new String[lstCustomer.size()][5];
+
+     for (int i = 0; i < lstCustomer.size(); i++) {
+        System.out.println(lstCustomer.get(i).getCustFname());
+           data[i][0] = lstCustomer.get(i).getCustFname();
+           data[i][1] = lstCustomer.get(i).getCustLname();
+           data[i][2] = lstCustomer.get(i).getPhoneNo();
+           data[i][3] = lstCustomer.get(i).getAddress();
+           data[i][4] = lstCustomer.get(i).getField();
+       }
+        model= new DefaultTableModel(data, columns);
+    }
+    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
                 new homePanel().setVisible(true);
         dispose();
     }                                        
 
-    private void searchTxtFActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
-
     private void SearchBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
+        fill();
+        jTable1.setBackground(new java.awt.Color(0, 153, 204));
+        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 255));
+        jTable1.setModel(model);
+        jScrollPane1.setViewportView(jTable1);
+        thirdPanel.setBackground(new java.awt.Color(0, 153, 153));
+        thirdPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(204, 204, 204), null));
+        javax.swing.GroupLayout thirdPanelLayout = new javax.swing.GroupLayout(thirdPanel);
+        thirdPanel.setLayout(thirdPanelLayout);
+        thirdPanelLayout.setHorizontalGroup(
+            thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+        );
+        thirdPanelLayout.setVerticalGroup(
+            thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
+        );
     }                                         
-
     /**
      * @param args the command line arguments
      */
