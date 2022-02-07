@@ -280,7 +280,7 @@ public class DoctorRegistration extends javax.swing.JFrame {
         String confirmPassword = ConfirmPassworrdField.getText();
 
       
-        if(password.equals(confirmPassword)){
+        if(password.equals(confirmPassword)&& fname=="" && lname=="" && lname=="" && username=="" && password==""){
             Doctor doctor = new Doctor(fname, lname, address, phone,Field, username, password);
             DoctorController doctorController = new DoctorController();
             int insert = doctorController.registerCustomer(doctor);
@@ -292,7 +292,7 @@ public class DoctorRegistration extends javax.swing.JFrame {
 
            
         }else{
-            JOptionPane.showMessageDialog(null,"Password and Confirm Password does not match");
+            JOptionPane.showMessageDialog(null,"Fill all the required field");
             ConfirmPassworrdField.requestFocus();
         }
     }                 

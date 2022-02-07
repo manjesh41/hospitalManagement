@@ -285,7 +285,7 @@ public class registration extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "failed to register");
     
             }else{
-                JOptionPane.showMessageDialog(null,"Password and Confirm Password does not match");
+                JOptionPane.showMessageDialog(null,"fill all the required data");
                 jTextField7.requestFocus();
             }
         }catch(Exception e){

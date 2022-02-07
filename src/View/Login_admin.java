@@ -387,6 +387,10 @@ public class Login_admin extends javax.swing.JFrame {
                     Customer customer = customerController.loginCustomer(username,passw);
                         if (customer!=null){
                             new homePanel().setVisible(true);
+                        
+
+
+
                             dispose();
                         JOptionPane.showMessageDialog(null, "login succesfully");}
                         else{
