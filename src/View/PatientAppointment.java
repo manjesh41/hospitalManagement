@@ -11,6 +11,7 @@ package View;
  */
 public class PatientAppointment extends javax.swing.JFrame {
 
+    public static Object TxtPatient_Name;
     /**
      * Creates new form PatientAppointment
      */
