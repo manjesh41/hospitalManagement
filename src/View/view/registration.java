@@ -275,7 +275,7 @@ public class registration extends javax.swing.JFrame {
         String confirmPassword = jTextField7.getText();
         
         try{
-            if(password.equals(confirmPassword)&& username=="" && password=="" && fname=="" && lname==""){
+            if(password.equals(confirmPassword)){
                 Customer customer = new Customer(fname, lname, address, phone, username, password);
                 CustomerController customerController = new CustomerController();
                 int insert = customerController.registerCustomer(customer);
