@@ -14,6 +14,7 @@ public class AdminPanel extends javax.swing.JFrame {
 
     private void BtnLogoutActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+
     }
 
     private void BtnDoctorActionPerformed(java.awt.event.ActionEvent evt) {
