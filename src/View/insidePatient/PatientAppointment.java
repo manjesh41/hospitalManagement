@@ -1,4 +1,4 @@
-package View;
+package View.insidePatient;
 
 import View.insidedoctor.DoctorPanel;
 

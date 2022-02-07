@@ -4,20 +4,13 @@ import java.sql.PreparedStatement;
 import controller.CustomerController;
 import model.Customer;
 import View.Login_admin;
-import View.login.LoginScreen;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import javax.swing.JOptionPane;
-
 public class registration extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-
-
-
     /**
     * Creates new form registration
     */
@@ -114,7 +107,7 @@ public class registration extends javax.swing.JFrame {
     
     
     jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-    jLabel5.setText("Country");
+    jLabel5.setText("Address");
     
     
     

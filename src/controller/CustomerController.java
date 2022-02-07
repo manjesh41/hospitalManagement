@@ -97,6 +97,32 @@ public class CustomerController {
 
         return lstCustomers;
     }
+    public List<Customer> getAllACustomers() {
+        String query;
+        query = "select * from customer";
+        db = new DbConnection();
+        ResultSet rs = db.retrieve(query);
+        List<Customer> lstCustomers = new ArrayList<Customer>();
+
+        try {
+            while (rs.next()) {
+                Customer customer = new Customer();
+                customer.setCustId(rs.getInt("custId"));
+                customer.setCustFname(rs.getString("custFname"));
+                customer.setCustLname(rs.getString("custLname"));
+                customer.setPhoneNo(rs.getString("phoneNo"));
+                customer.setAddress(rs.getString("address"));
+                customer.setUsername(rs.getString("username"));
+                customer.setPassword(rs.getString("password"));
+
+                lstCustomers.add(customer);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+
+        return lstCustomers;
+    }
     public CustomerController loginCustomer(Customer customer) {
         return null;
     }

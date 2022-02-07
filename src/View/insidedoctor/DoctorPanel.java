@@ -1,7 +1,7 @@
 package View.insidedoctor;
 
 import View.Login_admin;
-import View.PatientAppointment;
+import View.insidePatient.PatientAppointment;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

@@ -1,6 +1,13 @@
 package View.insideAdmin;
 
-import View.AdminPanel;
+import java.util.List;
+
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import controller.DoctorController;
+import model.Doctor;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -20,6 +27,10 @@ public class AdminDocInfo extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
     }
+    Object[] columns = { "First name", "Last Name", "Phone", "Address","Field","password" };
+    String data[][];
+    JTable table;
+    DefaultTableModel model;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,9 +53,18 @@ public class AdminDocInfo extends javax.swing.JFrame {
         appointmentInfoPanel = new javax.swing.JPanel();
         VerticalScroll = new javax.swing.JScrollBar();
         verticalScrollbar = new javax.swing.JScrollBar();
+        JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
+        JTable jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Doctors Details\n");
+        fillArray();
+        jTable1.setBackground(new java.awt.Color(0, 153, 204));
+        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 255));
+        jTable1.setModel(model);
+        jScrollPane1.setViewportView(jTable1);
+
 
         jPanel1.setBackground(new java.awt.Color(102, 153, 0));
 
@@ -152,14 +172,14 @@ public class AdminDocInfo extends javax.swing.JFrame {
                 .addComponent(verticalScrollbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(VerticalScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+                .addComponent(jScrollPane1));
         appointmentInfoPanelLayout.setVerticalGroup(
             appointmentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(VerticalScroll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(appointmentInfoPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(verticalScrollbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+                .addComponent(jScrollPane1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -193,7 +213,23 @@ public class AdminDocInfo extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>                 
+    private void fillArray() {
+        DoctorController controller = new DoctorController();
+        List<Doctor> lstCustomer = controller.aDoctors();
+        
+        data = new String[lstCustomer.size()][5];
+
+        for (int i = 0; i < lstCustomer.size(); i++) {
+            System.out.println(lstCustomer.get(i).getCustFname());
+            data[i][0] = lstCustomer.get(i).getCustFname();
+            data[i][1] = lstCustomer.get(i).getCustLname();
+            data[i][2] = lstCustomer.get(i).getPhoneNo();
+            data[i][3] = lstCustomer.get(i).getAddress();
+            data[i][4] = lstCustomer.get(i).getField();
+        }
+        model = new DefaultTableModel(data, columns);
+    }       
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:

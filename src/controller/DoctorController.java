@@ -75,7 +75,33 @@ public class DoctorController {
 
         return doctor;
     }
+    public List<Doctor> searchlList(String username) {
+        String query;
+        query = "select * from doctor where username='"+username+"';";
+        db = new DoctorConnection();
+        ResultSet rs = db.retrievedoctor(query);
+        List<Doctor> lstCustomers = new ArrayList<Doctor>();
 
+        try {
+            while (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setCustId(rs.getInt("custId"));
+                doctor.setCustFname(rs.getString("custFname"));
+                doctor.setCustLname(rs.getString("custLname"));
+                doctor.setPhoneNo(rs.getString("phoneNo"));
+                doctor.setAddress(rs.getString("address"));
+                doctor.setUsername(rs.getString("username"));
+                doctor.setField(rs.getString("Field"));
+
+                lstCustomers.add(doctor);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+
+        return lstCustomers;
+    }
+ //to get the details of the customers
     public List<Doctor> getAllCustomers() {
         String query;
         query = "select * from doctor";
@@ -102,6 +128,35 @@ public class DoctorController {
 
         return lstCustomers;
     }
+    //for the admin panel
+    public List<Doctor> aDoctors() {
+        String query;
+        query = "select * from doctor";
+        db = new DoctorConnection();
+        ResultSet rs = db.retrievedoctor(query);
+        List<Doctor> lstCustomers = new ArrayList<Doctor>();
+
+        try {
+            while (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setCustId(rs.getInt("custId"));
+                doctor.setCustFname(rs.getString("custFname"));
+                doctor.setCustLname(rs.getString("custLname"));
+                doctor.setPhoneNo(rs.getString("phoneNo"));
+                doctor.setAddress(rs.getString("address"));
+                doctor.setUsername(rs.getString("username"));
+                doctor.setField(rs.getString("Field"));
+                doctor.setPassword(rs.getString("password"));
+
+                lstCustomers.add(doctor);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+
+        return lstCustomers;
+    }
+    //for neurologist
     public List<Doctor> neurList() {
         String query;
         query = "select * from doctor where Field = 'Neurotherapist'";
@@ -128,6 +183,7 @@ public class DoctorController {
 
         return lstCustomers;
     }
+    // gyno doctor
     public List<Doctor> gynList() {
         String query;
         query = "select * from doctor where Field = 'Gynecologist'";
@@ -154,6 +210,7 @@ public class DoctorController {
 
         return lstCustomers;
     }
+    // for optometrist doctor
     public List<Doctor> optoList() {
         String query;
         query = "select * from doctor where Field = 'Optometrist'";
@@ -180,6 +237,7 @@ public class DoctorController {
 
         return lstCustomers;
     }
+    //for paediaterian doctor
     public List<Doctor> paediatList() {
         String query;
         query = "select * from doctor where Field = 'Paediatrician'";
@@ -206,6 +264,7 @@ public class DoctorController {
 
         return lstCustomers;
     }
+    // for dermatologist doctor
     public List<Doctor> dermatologiList() {
         String query;
         query = "select * from doctor where Field = 'Dermatologist'";

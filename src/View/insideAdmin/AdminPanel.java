@@ -1,6 +1,6 @@
-package View;
+package View.insideAdmin;
 
-import View.insideAdmin.AdminDocInfo;
+import View.Login_admin;
 
 public class AdminPanel extends javax.swing.JFrame {
 
