@@ -215,8 +215,7 @@ public class homePanel extends javax.swing.JFrame {
 
     private void btnDoctorDetailsActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        Doctor doctor = new Doctor();
-        new Doctordetailsb(doctor).setVisible(true);
+        new DoctorDetails().setVisible(true);
         dispose();
     }
 
