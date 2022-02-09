@@ -1,5 +1,14 @@
 package View;
 
+import java.util.List;
+
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import View.Schedule;
+import controller.ScheduleController;
+import model.ModelSchedule;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -19,7 +28,9 @@ public class PatientAppointment extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
     }
-
+    Object[] columns ={"PatientName", "Age", "Gender", "Problems", "DoctorName", "Year", "Month", "Day", "Time", "Am_Pm"};
+    String data[][];
+    DefaultTableModel model;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
