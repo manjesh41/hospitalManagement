@@ -69,18 +69,17 @@ public class ScheduleController{
             while (rs.next()) {
                 ModelSchedule schedule = new ModelSchedule();
                 schedule.setPatientstId(rs.getInt("PatientstId"));
-                schedule.setTxtPatient_Name(rs.getString("TxtPatient_Name"));
-                schedule.setTxtPatient_Name(rs.getString("TxtPatient_Name"));
-                schedule.setTxtPatient_Name(rs.getString("TxtPatient_Name"));
-                schedule.setComboboxAge(rs.getString("ComboboxAge"));
-                schedule.setJComboBoxGender(rs.getString("JComboBoxGender"));
-                schedule.setTxtAreaProblems(rs.getString("TxtAreaProblems"));
-                schedule.setJcomboBoxDoctorName(rs.getString("jComboBoxDoctorName"));
-                schedule.setJSpinner1(rs.getString("jSpinner1"));
-                schedule.setMonthSipnner(rs.getString("monthSipnner"));
-                schedule.setDaySpinner(rs.getString("DaySpinner"));
-                schedule.setTxtTime(rs.getString("TxtTime"));
-                schedule.setJComboBoxTime("jComboBoxTime");
+                
+                schedule.setTxtPatient_Name(rs.getString("PatientName"));
+                schedule.setComboboxAge(rs.getString("Age"));
+                schedule.setJComboBoxGender(rs.getString("Gender"));
+                schedule.setTxtAreaProblems(rs.getString("Problems"));
+                schedule.setJcomboBoxDoctorName(rs.getString("DoctorName"));
+                schedule.setJSpinner1(rs.getString("Year"));
+                schedule.setMonthSipnner(rs.getString("Month"));
+                schedule.setDaySpinner(rs.getString("Day"));
+                schedule.setTxtTime(rs.getString("Time"));
+                schedule.setJComboBoxTime("Am_Pm");
 
                 lstSchedules.add(schedule);
             }
