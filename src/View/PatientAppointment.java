@@ -41,6 +41,8 @@ public class PatientAppointment extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollBar1 = new javax.swing.JScrollBar();
+        
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         appLbl = new javax.swing.JLabel();
@@ -54,6 +56,11 @@ public class PatientAppointment extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scheduled Appointmen");
+        fillArray();
+        jTable1.setBackground(new java.awt.Color(0, 153, 204));
+        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 255));
+        jTable1.setModel(model);
 
         jPanel1.setBackground(new java.awt.Color(102, 153, 0));
 
@@ -188,7 +195,30 @@ public class PatientAppointment extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold> 
+    private void fillArray() {
+        ScheduleController controller = new ScheduleController();
+        List<ModelSchedule> lstSchedule = controller.dermatologiList();
+        
+        data = new String[lstSchedule.size()][5];
+
+        for (int i = 0; i < lstSchedule.size(); i++) {
+            System.out.println(lstSchedule.get(i).getTxtPatient_Name());
+            data[i][0] = lstSchedule.get(i).getTxtPatient_Name();
+            data[i][1] = lstSchedule.get(i).getComboboxAge();
+            data[i][2] = lstSchedule.get(i).getJComboBoxGender();
+            data[i][3] = lstSchedule.get(i).getTxtAreaProblems();
+            data[i][4] = lstSchedule.get(i).getJcomboBoxDoctorName();
+            data[i][5] = lstSchedule.get(i).getJSpinner1();
+            data[i][6] = lstSchedule.get(i).getMonthSipnner();
+            data[i][7] = lstSchedule.get(i).getDaySpinner();
+            data[i][8] = lstSchedule.get(i).getTxtTime();
+            data[i][9] = lstSchedule.get(i).getJComboBoxTime();
+
+            
+        }
+        model = new DefaultTableModel(data, columns);
+                           
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
