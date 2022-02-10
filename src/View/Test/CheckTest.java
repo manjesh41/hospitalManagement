@@ -9,7 +9,7 @@ public class CheckTest {
     @Test
     public void main() {
         String Password;
-        Password = "ADMIN";
+        Password = "Paras";
         extracted(Password);
     }
 
