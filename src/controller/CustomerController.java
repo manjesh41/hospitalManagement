@@ -72,6 +72,29 @@ public class CustomerController {
         return customer;
     }
 
+    // delete customer
+    public Customer deleCustomer(String username) {
+        String query;
+        query = "delete from customer where username = '" + username +"';'";
+        ResultSet rs = db.retrieve(query);
+        Customer customer = null;
+
+        try {
+            while (rs.next()) {customer = new Customer();
+                customer.setCustId(rs.getInt("custId"));
+                customer.setCustFname(rs.getString("custFname"));
+                customer.setCustLname(rs.getString("custLname"));
+                customer.setAddress(rs.getString("address"));
+                customer.setUsername(rs.getString("username"));
+                
+            }
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+
+        return customer;
+    }
+
     public List<Customer> getAllCustomers() {
         String query;
         query = "select * from customer";

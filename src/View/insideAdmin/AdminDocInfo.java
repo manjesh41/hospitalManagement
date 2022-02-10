@@ -4,7 +4,10 @@ import java.util.List;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+
+import org.w3c.dom.events.MouseEvent;
 
 import controller.DoctorController;
 import model.Doctor;
@@ -27,7 +30,7 @@ public class AdminDocInfo extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
     }
-    Object[] columns = { "First name", "Last Name", "Phone", "Address","Field","password" };
+    Object[] columns = {"First name", "Last Name", "Phone", "Address","Field","password" };
     String data[][];
     JTable table;
     DefaultTableModel model;
@@ -63,8 +66,12 @@ public class AdminDocInfo extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTable1.setForeground(new java.awt.Color(0, 0, 255));
         jTable1.setModel(model);
+        jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jTable1);
 
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        int row = jTable1.getSelectedRow();
+        String eve = (String) jTable1.getModel().getValueAt(row, 2);
 
         jPanel1.setBackground(new java.awt.Color(102, 153, 0));
 
@@ -242,7 +249,9 @@ public class AdminDocInfo extends javax.swing.JFrame {
     }                                         
 
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
+        
+        
     }                                         
 
     /**

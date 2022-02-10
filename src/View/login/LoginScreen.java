@@ -10,7 +10,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import controller.CustomerController;
 import model.Customer;
-import View.view.Dashboard;
+
 import View.view.registration;
 public class LoginScreen implements ActionListener {
 
@@ -71,7 +71,6 @@ public class LoginScreen implements ActionListener {
       Customer customer = controller.loginCustomer(txtUsername.getText(),
        txtPassword.getText());
       if (customer != null) {
-        new Dashboard(customer);
       }else{
         JOptionPane.showMessageDialog(null, "Invalid username or password");
       }

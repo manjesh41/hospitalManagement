@@ -75,6 +75,33 @@ public class DoctorController {
 
         return doctor;
    }
+    // delete customer
+    public List<Doctor> deletList(String phone) {
+        String query;
+        query = "delete from doctor where phoneNo = '"+phone+"';";
+        db = new DoctorConnection();
+        ResultSet rs = db.retrievedoctor(query);
+        List<Doctor> lstCustomers = new ArrayList<Doctor>();
+
+        try {
+            while (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setCustId(rs.getInt("custId"));
+                doctor.setCustFname(rs.getString("custFname"));
+                doctor.setCustLname(rs.getString("custLname"));
+                doctor.setPhoneNo(rs.getString("phoneNo"));
+                doctor.setAddress(rs.getString("address"));
+                doctor.setUsername(rs.getString("username"));
+                doctor.setField(rs.getString("Field"));
+
+                lstCustomers.add(doctor);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+
+        return lstCustomers;
+    }
     public List<Doctor> searchlList(String username) {
         String query;
         query = "select * from doctor where custFname='"+username+"';";
