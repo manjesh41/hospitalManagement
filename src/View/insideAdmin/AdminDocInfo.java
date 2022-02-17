@@ -1,13 +1,11 @@
 package View.insideAdmin;
 
 import java.util.List;
-
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
-
-import org.w3c.dom.events.MouseEvent;
 
 import controller.DoctorController;
 import model.Doctor;
@@ -34,6 +32,8 @@ public class AdminDocInfo extends javax.swing.JFrame {
     String data[][];
     JTable table;
     DefaultTableModel model;
+    String selectionId;
+    int selectionIndex;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,18 +61,7 @@ public class AdminDocInfo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Doctors Details\n");
-        fillArray();
-        jTable1.setBackground(new java.awt.Color(0, 153, 204));
-        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 255));
-        jTable1.setModel(model);
-        jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jTable1);
-
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        int row = jTable1.getSelectedRow();
-        String eve = (String) jTable1.getModel().getValueAt(row, 2);
-
+        
         jPanel1.setBackground(new java.awt.Color(102, 153, 0));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -89,6 +78,50 @@ public class AdminDocInfo extends javax.swing.JFrame {
                 BackBtnActionPerformed(evt);
             }
         });
+        fillArray();
+        jTable1.setBackground(new java.awt.Color(0, 153, 204));
+        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 255));
+        jTable1.setModel(model);
+        jTable1.addMouseListener(new MouseListener(){
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // TODO Auto-generated method stub
+                selectionId = data[jTable1.getSelectedRows()[0]][5];
+                selectionIndex = jTable1.getSelectedRows()[0];
+                // ;
+                // System.out.println(selectionId);
+            }
+    
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+    
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+    
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+    
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+            
+            
+               
+           });
+        jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel1.setText("Swastha Sewa");
@@ -142,7 +175,9 @@ public class AdminDocInfo extends javax.swing.JFrame {
         DeleteBtn.setText("Remove");
         DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteBtnActionPerformed(evt);
+                DoctorController controller = new DoctorController();
+                 controller.deleteDoctor(selectionId);
+                ((DefaultTableModel)jTable1.getModel()).removeRow(selectionIndex);
             }
         });
 
@@ -225,15 +260,15 @@ public class AdminDocInfo extends javax.swing.JFrame {
         DoctorController controller = new DoctorController();
         List<Doctor> lstCustomer = controller.aDoctors();
         
-        data = new String[lstCustomer.size()][5];
+        data = new String[lstCustomer.size()][6];
 
         for (int i = 0; i < lstCustomer.size(); i++) {
-            System.out.println(lstCustomer.get(i).getCustFname());
             data[i][0] = lstCustomer.get(i).getCustFname();
             data[i][1] = lstCustomer.get(i).getCustLname();
             data[i][2] = lstCustomer.get(i).getPhoneNo();
             data[i][3] = lstCustomer.get(i).getAddress();
             data[i][4] = lstCustomer.get(i).getField();
+            data[i][5] = lstCustomer.get(i).getPassword();
         }
         model = new DefaultTableModel(data, columns);
     }       
@@ -250,6 +285,7 @@ public class AdminDocInfo extends javax.swing.JFrame {
 
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here: 
+        
         
         
     }                                         

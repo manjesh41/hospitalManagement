@@ -49,7 +49,6 @@ public class DoctorController {
     }
 
     //Login Customer
-    // Login customer
     public Doctor loginCustomer(String username, String password) {
         String query;
         query = "select * from doctor where username = '" + username +
@@ -75,10 +74,10 @@ public class DoctorController {
 
         return doctor;
    }
-    // delete customer
-    public List<Doctor> deletList(String phone) {
+    
+    public List<Doctor> searchlList(String username) {
         String query;
-        query = "delete from doctor where phoneNo = '"+phone+"';";
+        query = "select * from doctor where custFname='"+username+"';";
         db = new DoctorConnection();
         ResultSet rs = db.retrievedoctor(query);
         List<Doctor> lstCustomers = new ArrayList<Doctor>();
@@ -102,9 +101,17 @@ public class DoctorController {
 
         return lstCustomers;
     }
-    public List<Doctor> searchlList(String username) {
+    //delete doctor
+    public void deleteDoctor(String username) {
         String query;
-        query = "select * from doctor where custFname='"+username+"';";
+        query = "delete from doctor where custId = "+ Integer.valueOf(username) +";";
+        db = new DoctorConnection();
+        db.maniulatedoctor(query);
+    }
+    //update doctor
+    public List<Doctor> updatDoctors(String username) {
+        String query;
+        query = "update * from doctor where custFname='"+username+"';";
         db = new DoctorConnection();
         ResultSet rs = db.retrievedoctor(query);
         List<Doctor> lstCustomers = new ArrayList<Doctor>();

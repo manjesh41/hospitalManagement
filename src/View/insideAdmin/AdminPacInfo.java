@@ -1,5 +1,7 @@
 package View.insideAdmin;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.List;
 
 import javax.swing.JScrollPane;
@@ -27,11 +29,12 @@ public class AdminPacInfo extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
     }
-    Object[] columns = { "First name", "Last Name","Address", "Email", "Contact","password" };
+    Object[] columns = {"First name", "Last Name","Address", "Email", "Contact","password", "ID" };
    String data[][];
    JTable table;
    DefaultTableModel model;
-
+    String selectionId;
+    int selectionIndex;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -80,6 +83,45 @@ public class AdminPacInfo extends javax.swing.JFrame {
        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
        jTable1.setForeground(new java.awt.Color(0, 0, 255));
        jTable1.setModel(model);
+        //    jTable1.remove(index);
+       jTable1.addMouseListener(new MouseListener(){
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            // TODO Auto-generated method stub
+            selectionId = data[jTable1.getSelectedRows()[0]][6];
+            selectionIndex = jTable1.getSelectedRows()[0];
+            // ;
+            // System.out.println(selectionId);
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        
+           
+       });
        jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
@@ -134,7 +176,13 @@ public class AdminPacInfo extends javax.swing.JFrame {
         DeleteBtn.setText("Remove");
         DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteBtnActionPerformed(evt);
+                // if(selectionIndex!=null)
+                // jTable1.convertRowIndexToModel(selectionIndex);
+                // DeleteBtnActionPerformed(evt);
+                
+                CustomerController controller = new CustomerController();
+                 controller.dCustomers(selectionId);
+                ((DefaultTableModel)jTable1.getModel()).removeRow(selectionIndex);
             }
         });
 
@@ -217,7 +265,7 @@ public class AdminPacInfo extends javax.swing.JFrame {
         CustomerController controller = new CustomerController();
         List<Customer> lstCustomer = controller.getAllACustomers();
         
-        data = new String[lstCustomer.size()][6];
+        data = new String[lstCustomer.size()][7];
     
         for (int i = 0; i < lstCustomer.size(); i++) {
             data[i][0] = lstCustomer.get(i).getCustFname();
@@ -226,6 +274,7 @@ public class AdminPacInfo extends javax.swing.JFrame {
             data[i][3] = lstCustomer.get(i).getAddress();
             data[i][4] = lstCustomer.get(i).getUsername();
             data[i][5] = lstCustomer.get(i).getPassword();
+            data[i][6] = lstCustomer.get(i).getCustIdString();
             
         }
         model = new DefaultTableModel(data, columns);
@@ -240,6 +289,8 @@ public class AdminPacInfo extends javax.swing.JFrame {
 
     private void AcceptBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
+        new Update().setVisible(true);
+        dispose();
     }                                         
 
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          

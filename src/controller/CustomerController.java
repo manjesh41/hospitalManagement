@@ -72,28 +72,28 @@ public class CustomerController {
         return customer;
     }
 
-    // delete customer
-    public Customer deleCustomer(String username) {
+
+    //delete customer
+    public void dCustomers(String username) {
         String query;
-        query = "delete from customer where username = '" + username +"';'";
-        ResultSet rs = db.retrieve(query);
-        Customer customer = null;
-
-        try {
-            while (rs.next()) {customer = new Customer();
-                customer.setCustId(rs.getInt("custId"));
-                customer.setCustFname(rs.getString("custFname"));
-                customer.setCustLname(rs.getString("custLname"));
-                customer.setAddress(rs.getString("address"));
-                customer.setUsername(rs.getString("username"));
-                
-            }
-        } catch (Exception ex) {
-            System.out.println("Error" + ex);
-        }
-
-        return customer;
+        query = "delete from customer where custId = "+ Integer.valueOf(username) +";";
+        db = new DbConnection();
+        db.maniulate(query);
     }
+    //update customer
+    public int uCustomers(Customer customer){
+        String query;
+        query= "update into customer(custFname, custLname,address, phoneNo,username, password) values('"+
+             customer.getCustFname()+"','"+
+             customer.getCustLname()+"','"+
+             customer.getAddress()+"','"+
+             customer.getPhoneNo()+"','"+
+             customer.getUsername()+"','"+
+             customer.getPassword()+"');";
+        
+        db = new DbConnection();
+        return db.maniulate(query);
+     }
 
     public List<Customer> getAllCustomers() {
         String query;

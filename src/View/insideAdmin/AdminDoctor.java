@@ -34,7 +34,7 @@ public class AdminDoctor extends javax.swing.JFrame {
         appLbl = new javax.swing.JLabel();
         BackBtn = new javax.swing.JButton();
         acceptAndDeletPanel = new javax.swing.JPanel();
-        AcceptBtn = new javax.swing.JButton();
+        // AcceptBtn = new javax.swing.JButton();
         DeleteBtn = new javax.swing.JButton();
         appointmentInfoPanel = new javax.swing.JPanel();
         VerticalScroll = new javax.swing.JScrollBar();
@@ -85,16 +85,16 @@ public class AdminDoctor extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        acceptAndDeletPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, java.awt.Color.darkGray));
+        // acceptAndDeletPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, java.awt.Color.darkGray));
 
-        AcceptBtn.setBackground(new java.awt.Color(0, 204, 0));
-        AcceptBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        AcceptBtn.setText("Accept");
-        AcceptBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AcceptBtnActionPerformed(evt);
-            }
-        });
+        // AcceptBtn.setBackground(new java.awt.Color(0, 204, 0));
+        // AcceptBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        // AcceptBtn.setText("Accept");
+        // AcceptBtn.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         AcceptBtnActionPerformed(evt);
+        //     }
+        // });
 
         DeleteBtn.setBackground(new java.awt.Color(255, 51, 51));
         DeleteBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -112,7 +112,7 @@ public class AdminDoctor extends javax.swing.JFrame {
             .addGroup(acceptAndDeletPanelLayout.createSequentialGroup()
                 .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(acceptAndDeletPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AcceptBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    // .addComponent(AcceptBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DeleteBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -120,7 +120,7 @@ public class AdminDoctor extends javax.swing.JFrame {
             acceptAndDeletPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(acceptAndDeletPanelLayout.createSequentialGroup()
                 .addGap(111, 111, 111)
-                .addComponent(AcceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                // .addComponent(AcceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(181, Short.MAX_VALUE))
@@ -230,7 +230,7 @@ public class AdminDoctor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton AcceptBtn;
+    // private javax.swing.JButton AcceptBtn;
     private javax.swing.JButton BackBtn;
     private javax.swing.JButton DeleteBtn;
     private javax.swing.JScrollBar VerticalScroll;

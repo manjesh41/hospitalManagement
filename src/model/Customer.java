@@ -36,6 +36,10 @@ public class Customer {
         return custId;
     }
 
+    public String getCustIdString() {
+        return String.valueOf(custId);
+    }
+
    
     public void setCustId(int custId) {
         this.custId = custId;

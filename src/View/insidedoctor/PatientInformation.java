@@ -1,6 +1,8 @@
 
 package View.insidedoctor;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
@@ -25,7 +27,8 @@ public class PatientInformation extends javax.swing.JFrame {
    String data[][];
    JTable table;
    DefaultTableModel model;
-
+   String selectionId;
+   int selectionIndex;
 
    /**
     * This method is called from within the constructor to initialize the form.
@@ -98,6 +101,7 @@ public class PatientInformation extends javax.swing.JFrame {
        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
        jTable1.setForeground(new java.awt.Color(0, 0, 255));
        jTable1.setModel(model);
+   
        jScrollPane1.setViewportView(jTable1);
 
        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
