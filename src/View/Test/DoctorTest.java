@@ -27,7 +27,7 @@ public class DoctorTest {
 
         doctor = doctorController.loginCustomer("dipesh.ratala@gmail.com","dipesh");
         boolean expectedValue = doctor!= null;
-        boolean actualValue = true;
+        boolean actualValue = false;
         Assert.assertEquals(expectedValue, actualValue);
 
         
