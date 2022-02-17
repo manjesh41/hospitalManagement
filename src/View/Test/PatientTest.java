@@ -25,9 +25,9 @@ public class PatientTest {
     @Test
     public void testCase() throws SQLException {
 
-        customer = customerController.loginCustomer("paras@gmail.com","1234");
+        customer = customerController.loginCustomer("9865623115","1234");
         boolean expectedValue = customer!= null;
-        boolean actualValue = true;
+        boolean actualValue = false;
         Assert.assertEquals(expectedValue, actualValue);
 
 
