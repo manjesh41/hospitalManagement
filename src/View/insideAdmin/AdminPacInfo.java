@@ -51,7 +51,7 @@ public class AdminPacInfo extends javax.swing.JFrame {
         BackBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         acceptAndDeletPanel = new javax.swing.JPanel();
-        AcceptBtn = new javax.swing.JButton();
+        //AcceptBtn = new javax.swing.JButton();
         DeleteBtn = new javax.swing.JButton();
         appointmentInfoPanel = new javax.swing.JPanel();
         VerticalScroll = new javax.swing.JScrollBar();
@@ -162,14 +162,14 @@ public class AdminPacInfo extends javax.swing.JFrame {
         acceptAndDeletPanel.setBackground(new java.awt.Color(102, 255, 102));
         acceptAndDeletPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, java.awt.Color.darkGray));
 
-        AcceptBtn.setBackground(new java.awt.Color(0, 0, 255));
-        AcceptBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        AcceptBtn.setText("UPDATE");
-        AcceptBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AcceptBtnActionPerformed(evt);
-            }
-        });
+        // AcceptBtn.setBackground(new java.awt.Color(0, 0, 255));
+        // AcceptBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        // AcceptBtn.setText("UPDATE");
+        // AcceptBtn.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         AcceptBtnActionPerformed(evt);
+        //     }
+        // });
 
         DeleteBtn.setBackground(new java.awt.Color(255, 51, 51));
         DeleteBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -193,7 +193,7 @@ public class AdminPacInfo extends javax.swing.JFrame {
             .addGroup(acceptAndDeletPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(acceptAndDeletPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AcceptBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+              //      .addComponent(AcceptBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                     .addComponent(DeleteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -201,7 +201,7 @@ public class AdminPacInfo extends javax.swing.JFrame {
             acceptAndDeletPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(acceptAndDeletPanelLayout.createSequentialGroup()
                 .addGap(111, 111, 111)
-                .addComponent(AcceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                //.addComponent(AcceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(181, Short.MAX_VALUE))
@@ -340,7 +340,7 @@ public class AdminPacInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton AcceptBtn;
+    //private javax.swing.JButton AcceptBtn;
     private javax.swing.JButton BackBtn;
     private javax.swing.JButton DeleteBtn;
     private javax.swing.JScrollBar VerticalScroll;

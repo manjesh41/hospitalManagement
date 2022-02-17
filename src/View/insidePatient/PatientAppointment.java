@@ -1,6 +1,17 @@
 package View.insidePatient;
 
+import java.util.List;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import View.Schedule;
 import View.insidedoctor.DoctorPanel;
+import controller.ScheduleController;
+import model.ModelSchedule;
+
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -20,7 +31,12 @@ public class PatientAppointment extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
     }
-
+    Object[] columns = {"PatientName", "Age", "Gender", "Problems", "DoctorName","Year", "Month", "Day", "Time", "Am_Pm","Id" };
+    String data[][];
+    JTable table;
+    DefaultTableModel model;
+    String selectionId;
+    int selectionIndex;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +47,8 @@ public class PatientAppointment extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollBar1 = new javax.swing.JScrollBar();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         appLbl = new javax.swing.JLabel();
@@ -44,6 +62,52 @@ public class PatientAppointment extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scheduled Appointmen");
+        fillArray();
+        jTable1.setBackground(new java.awt.Color(0, 153, 204));
+        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 255));
+        jTable1.setModel(model);
+        jTable1.addMouseListener(new MouseListener(){
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // TODO Auto-generated method stub
+                selectionId = data[jTable1.getSelectedRows()[0]][6];
+                selectionIndex = jTable1.getSelectedRows()[0];
+                // ;
+                // System.out.println(selectionId);
+            }
+    
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+    
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+    
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+    
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+            
+            
+               
+           });
+
+        jScrollPane1.setViewportView(jTable1);
+
 
         jPanel1.setBackground(new java.awt.Color(102, 153, 0));
 
@@ -102,8 +166,11 @@ public class PatientAppointment extends javax.swing.JFrame {
         DeleteBtn.setText("Delete");
         DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteBtnActionPerformed(evt);
+                ScheduleController controller = new ScheduleController();
+                 controller.deleSchedule(selectionId);
+                ((DefaultTableModel)jTable1.getModel()).removeRow(selectionIndex);
             }
+    
         });
 
         javax.swing.GroupLayout acceptAndDeletPanelLayout = new javax.swing.GroupLayout(acceptAndDeletPanel);
@@ -137,12 +204,15 @@ public class PatientAppointment extends javax.swing.JFrame {
                 .addComponent(verticalScrollbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(VerticalScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        
+                .addComponent(jScrollPane1));
         appointmentInfoPanelLayout.setVerticalGroup(
             appointmentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(VerticalScroll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(appointmentInfoPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
+                
                 .addComponent(verticalScrollbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -178,7 +248,28 @@ public class PatientAppointment extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>\
+    private void fillArray() {
+        ScheduleController controller = new ScheduleController();
+        List<ModelSchedule> lstSchedules = controller.getAllSchedules();
+        
+        data = new String[lstSchedules.size()][11];
+
+        for (int i = 0; i < lstSchedules.size(); i++) {
+            data[i][0] = lstSchedules.get(i).getTxtPatient_Name();
+            data[i][1] = lstSchedules.get(i).getComboboxAge();
+            data[i][2] = lstSchedules.get(i).getJComboBoxGender();
+            data[i][3] = lstSchedules.get(i).getTxtAreaProblems();
+            data[i][4] = lstSchedules.get(i).getJcomboBoxDoctorName();
+            data[i][5] = lstSchedules.get(i).getJSpinner1();
+            data[i][6] = lstSchedules.get(i).getMonthSipnner();
+            data[i][7] = lstSchedules.get(i).getDaySpinner();
+            data[i][8] = lstSchedules.get(i).getJComboBoxTime();
+            data[i][9] = lstSchedules.get(i).getTxtTime();
+            data[i][10] = lstSchedules.get(i).getPatientsIdString();
+        }
+        model = new DefaultTableModel(data, columns);
+    }                        
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
@@ -237,6 +328,8 @@ public class PatientAppointment extends javax.swing.JFrame {
     private javax.swing.JPanel acceptAndDeletPanel;
     private javax.swing.JLabel appLbl;
     private javax.swing.JPanel appointmentInfoPanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollBar jScrollBar1;

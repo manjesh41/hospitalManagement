@@ -38,6 +38,9 @@ public class Doctor {
     public int getCustId() {
         return custId;
     }
+    public String getCustIdString() {
+        return String.valueOf(custId);
+    }
 
    
     public void setCustId(int custId) {
